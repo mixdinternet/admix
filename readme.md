@@ -1,27 +1,60 @@
-## Laravel PHP Framework
+## Admix
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+[![Total Downloads](https://poser.pugx.org/mixdinternet/admix/d/total.svg)](https://packagist.org/packages/mixdinternet/admix)
+[![Latest Stable Version](https://poser.pugx.org/mixdinternet/admix/v/stable.svg)](https://packagist.org/packages/mixdinternet/admix)
+[![License](https://poser.pugx.org/mixdinternet/admix/license.svg)](https://packagist.org/packages/mixdinternet/admix)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+![Área administrativa](http://mixd.com.br/github/52218e3bd3237b4720cf1e6a0894e511.png "Área administrativa")
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Admix é a estrutura inicial utilizada no desenvolvimento de sites da Mixd Internet.
 
-## Official Documentation
+Dentre os itens utilizados neste pacote podemos destacar:
+* [Laravel 5.1](https://laravel.com/docs/5.1)
+* [AdminLTE](https://almsaeedstudio.com/themes/AdminLTE/index.html)
+* [Integração com o Analytics](https://github.com/spatie/laravel-analytics)
+* [Gulp](http://gulpjs.com/)
+* [NPM](https://www.npmjs.com/)
+* [SASS](http://sass-lang.com/)
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Pré Requisitos
+[Homestead](https://laravel.com/docs/5.1/homestead) funcionando corretamente na máquina
 
-## Contributing
+Aumentar o timeout do composer `composer --global config process-timeout 2000` para que o npm install funcione
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Instalação
+Executar dentro do homestead
 
-## Security Vulnerabilities
+```
+$ cd ~/Code
+$ composer create-project mixdinternet/admix Blog
+```
+Faça login na sua aplicação utilizando os dados gerados na instalação
+```
+Ex.
+Usuário administrador criado.
+E-mail => xxxx@xxxxx.xxx
+Senha => xxxxx
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Caso não encontre, gere um novo utilizando o comando
+`php artisan db:seed`
+(todos os dados do banco serão perdidos, então utilize somente na instalação)
 
-### License
+## Configuração
+O arquivo de configuração do Admix está em `config/admin.php`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Os dados de autenticação do envio dos e-mails deve ser feito no `.env`
+
+## Contribuindo
+
+Em breve disponibilizaremos alguns pacotes para "encaixar" junto ao Admix.
+
+Caso tenha interesse em desenvolver algum, por favor entre em contato.
+
+## Vulnerabilidades
+
+Caso encontre alguma vulnerabilidade, por favor entre em contato.
+
+### Licença
+
+O Admix é open-source e nossa licença é [MIT](http://opensource.org/licenses/MIT)

@@ -62,11 +62,11 @@
         ],
         "post-create-project-cmd": [
             "php artisan key:generate",
+            "npm install",
+            "gulp",
             "php -r \"touch('storage/database.sqlite');\"",
             "php artisan migrate",
-            "php artisan db:seed",
-            "npm install",
-            "gulp"
+            "php artisan db:seed"
         ]
     },
     "config": {
