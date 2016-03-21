@@ -1,0 +1,163 @@
+/* ---- DOC ---- 
+
+Breakpoints:
+	
+	* Acima de 1200px = .col-lg-QUANTIDADE DE COLUNAS
+	* Entre 1200px e 1025px = .col-md-QUANTIDADE DE COLUNAS
+	* Entre 1024px e 769px = .col-sm-QUANTIDADE DE COLUNAS
+	* Entre 768px e 569px = .col-xs-QUANTIDADE DE COLUNAS
+	* Entre 568px e 481px = .col-g-QUANTIDADE DE COLUNAS
+	* Entre 480px e 381px = .col-m-QUANTIDADE DE COLUNAS
+	* Entre 380px e 321px = .col-p-QUANTIDADE DE COLUNAS
+	* Entre 320px e 0px = .col-pp-QUANTIDADE DE COLUNAS
+	
+	OBS: São 12 colunas, ou seja, 100% / 12 (8,3333% por coluna), 
+		 porém as quantidades de colunas podem ser modificadas
+		 é só alterar o valor da variável "$column-count";
+
+---- ---- ---- */
+
+$column-count: 12; /* Quantidade de colunas
+
+
+
+
+/* Desktop >>>> (lg) <<<< */
+
+/* Seta a porcentagem do width de todas as colunas "lg" */
+	@for $i from 1 through $column-count{
+		.col-lg-#{$i}{
+	    	display: block;
+	    	position: relative;
+			float: left;
+	    	width: $i * (100% / $column-count);
+		    margin: 0;
+		    padding: 0;
+		}
+	}
+									
+
+/* Notebook Small >>>> (md) <<<< */
+@media(max-width: 1200px){
+
+/* Seta a porcentagem do width de todas as colunas "md" */
+	@for $i from 1 through $column-count{
+		.col-md-#{$i}{
+	    	display: block;
+	    	position: relative;
+			float: left;
+	    	width: $i * (100% / $column-count);
+		    margin: 0;
+		    padding: 0;
+		}
+	}
+
+}
+
+
+/* Ipad/Tablet Landscape >>>> (sm) <<<< */
+@media(max-width: 1024px){
+
+/* Seta a porcentagem do width de todas as colunas "sm" */
+	@for $i from 1 through $column-count{
+		.col-sm-#{$i}{
+	    	display: block;
+	    	position: relative;
+			float: left;
+	    	width: $i * (100% / $column-count);
+		    margin: 0;
+		    padding: 0;
+		}
+	}
+
+}
+
+
+/* Iphone 6 Landscape AND Ipad/Tablet Portrait >>>> (xs) <<<< */
+@media(max-width: 768px){
+
+/* Seta a porcentagem do width de todas as colunas "xs" */
+	@for $i from 1 through $column-count{
+		.col-xs-#{$i}{
+	    	display: block;
+	    	position: relative;
+			float: left;
+	    	width: $i * (100% / $column-count);
+		    margin: 0;
+		    padding: 0;
+		}
+	}
+
+}
+
+
+/* Iphone 5 Landscape >>>> (g) <<<< */
+@media(max-width: 568px){
+
+/* Seta a porcentagem do width de todas as colunas "g" */
+	@for $i from 1 through $column-count{
+		.col-g-#{$i}{
+	    	display: block;
+	    	position: relative;
+			float: left;
+	    	width: $i * (100% / $column-count);
+		    margin: 0;
+		    padding: 0;
+		}
+	}
+
+}
+
+
+/* Iphone 3 AND 4 Landscape >>>> (m) <<<< */
+@media(max-width: 480px){
+
+/* Seta a porcentagem do width de todas as colunas "m" */
+	@for $i from 1 through $column-count{
+		.col-m-#{$i}{
+	    	display: block;
+	    	position: relative;
+			float: left;
+	    	width: $i * (100% / $column-count);
+		    margin: 0;
+		    padding: 0;
+		}
+	}
+
+}
+
+
+/* Iphone 6 Portrait >>>> (p) <<<< */
+@media(max-width: 380px){
+
+/* Seta a porcentagem do width de todas as colunas "p" */
+	@for $i from 1 through $column-count{
+		.col-p-#{$i}{
+	    	display: block;
+	    	position: relative;
+			float: left;
+	    	width: $i * (100% / $column-count);
+		    margin: 0;
+		    padding: 0;
+		}
+	}
+
+}
+
+
+/* Iphone 3 AND 4 Portrait >>>> (pp) <<<< */
+@media(max-width: 320px){
+
+/* Seta a porcentagem do width de todas as colunas "pp" */
+	@for $i from 1 through $column-count{
+		.col-pp-#{$i}{
+	    	display: block;
+	    	position: relative;
+			float: left;
+	    	width: $i * (100% / $column-count);
+		    margin: 0;
+		    padding: 0;
+		}
+	}
+
+}

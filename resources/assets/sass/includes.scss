@@ -1,0 +1,30 @@
+/* 
+------------------------------------------------------------------------------------------------
+	OBS: JAMAIS ALTERAR A ORDEM DOS BLOCOS, 
+	BASE PRIMEIRO, COMPONENTES EM SEGUNDO E POR FIM AS PÁGINAS
+------------------------------------------------------------------------------------------------
+*/
+
+
+
+/* ---------------- BASE ---------------------- */
+	@import 'resources/assets/sass/base/variables.scss';
+	@import 'resources/assets/sass/base/fonts.scss';
+	@import 'resources/assets/sass/base/mixins.scss';
+/* ---------------- BASE ---------------------- */
+
+
+/* ---------------- COMPONENTES ---------------------- */
+	@import 'resources/assets/sass/components/colunas.scss';
+	@import 'resources/assets/sass/components/formularios.scss';
+	@import 'resources/assets/sass/components/select-bootstrap.scss';
+	@import 'resources/assets/sass/components/slick-slider.scss';
+/* ---------------- COMPONENTES ---------------------- */
+
+
+/* ---------------- PAGES ---------------------- */
+	@import 'resources/assets/sass/pages/header.scss';
+	@import 'resources/assets/sass/pages/index.scss';
+	@import 'resources/assets/sass/pages/footer.scss';
+	@import 'resources/assets/sass/pages/home.scss';
+/* ---------------- PAGES ---------------------- */

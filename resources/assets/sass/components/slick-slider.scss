@@ -1,0 +1,148 @@
+.slick-slider{
+	position: relative;
+	width: 100%;
+	padding: 0;
+	.slick-slide{
+		outline: 0;
+		a{
+			outline: 0;
+		}
+	}
+	.slick-prev, .slick-next{
+		z-index: 8;
+		position: absolute;
+		top: 50%;
+		width: 35px;
+		outline: 0;
+		border: none;
+		background-color: transparent;
+		text-indent: -99999px;
+		overflow: hidden;
+	}
+	.slick-prev{
+		left: 30px;
+	}
+	.slick-next{
+		right: 30px;
+	}
+	.slick-dots{
+		display: table;
+		margin: 30px auto;
+		padding: 0;
+		list-style: none;
+		li{
+			position: relative;
+			float: left;
+			margin: 0 25px;
+			&:after{
+				content: "";
+				position: absolute;
+				right: -24px;
+				bottom: 0;
+				width: 2px;
+				height: 2px;
+				background-color: #000;
+				@include borderRadius(all, (100%));
+			}
+		}
+		li:first-child{
+			margin-left: 0;
+		}
+		li:last-child{
+			margin-right: 0;
+			&:after{
+				display: none;
+			}
+		}
+	}
+}
+
+
+/* ---------------------- Slider HOME ---------------------- */
+	.slider-home-novidades.slick-slider{
+		.slick-next{
+			width: 70px;
+			height: 35px;
+			margin-top: -17.5px;
+			border: 1px solid #d3d3d3;
+			@include borderRadius(all, 20px);
+			background-image: url('#{$urlImg}icone-btn-conheca.png');
+			background-repeat: no-repeat;
+			background-position: center left 20px;
+			background-size: 9px 14px;
+			background-color: #FFF;
+			&:hover{
+				@include animacao(sliderNext, background-position, (center left 20px, center left 50px), 1s, ease-out, 0s, infinite);
+			}
+		}
+		.slick-prev{
+			display: none;
+		}
+		&.left{
+			.slick-next{
+				right: 0;
+				margin-right: -35px;
+			}
+		}
+		&.right{
+			.slick-next{
+				left: 0;
+				margin-left: -35px;
+			}
+		}
+
+		@media(max-width: 1024px){
+			&.left{
+				.slick-next{
+					right: 50%;
+					top: 0;
+				}
+			}
+			&.right{
+				.slick-next{
+					left: 50%;
+					top: auto;
+					bottom: -17.5px;
+				}
+			}
+		}
+		@media(max-width: 480px){
+			.slick-next{
+				height: 25px;
+
+			}
+			&.left{
+				.slick-next{
+					margin-top: -12.5px;
+				}
+			}
+			&.right{
+				.slick-next{
+					bottom: -12.5px;
+				}
+			}
+		}
+	}
+/* ---------------------- Slider HOME ---------------------- */
+
+
+/* ---------------------- Slider Noticia Detalhes ---------------------- */
+	.slider-noticia-detalhes-thumbs.slick-slider{
+		 .slick-prev, .slick-next{
+			width: 12px;
+			height: 18px;
+			margin-top: -9px;
+			background-image: url('#{$urlImg}icone-arrow-laranja.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100%;
+		}
+		.slick-prev{
+			left: -10px;
+			@include rotate(180deg);
+		}
+		.slick-next{
+			right: -10px;
+		}
+	}
+/* ---------------------- Slider Noticia Detalhes ---------------------- */

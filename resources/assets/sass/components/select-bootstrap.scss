@@ -1,0 +1,156 @@
+/* OCULTANDO A SELECT CONVENCIONAL */
+.bs-select-hidden{
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* Select Bootstrap */
+.bootstrap-select.btn-group{
+	width: 100%!important;
+	.btn{
+		height: 40px!important;
+		background: #FFF!important; 
+		border: 1px solid #bfced6; 
+	    font-family: 'Opensans Regular';
+	    font-size: 16px;
+	    color: #424956;
+		@include borderRadius(all, (5px));
+		padding: 10px; 
+		padding-right: 35px!important;
+		&:focus{
+			outline: 0!important; 
+			-ms-box-shadow: none; 
+			-moz-box-shadow: none; 
+			-webkit-box-shadow: none; 
+			box-shadow: none;
+		}
+		.caret{
+			width: 40px; 
+			height: 100%;
+			top: 0; 
+			right: 0;
+			margin: 0;
+			border: none;
+		}
+	}
+	.dropdown-menu{
+		border: none; 
+		@include borderRadius(all, (0px));
+		background-color: #bfced6; 
+		padding-bottom: 10px; 
+		padding-top: 10px;
+	}
+	.dropdown-menu.open{
+		width: 90%!important; 
+		overflow: scroll;
+		.dropdown-menu{
+			width: 100%!important;
+		}
+	}
+	.dropdown-menu ul li a{
+	    font-family: 'Opensans Regular';
+	    font-size: 16px;
+	    color: #424956;
+		padding-left: 0; 
+		padding-right: 0;
+		&:hover{
+			background-color: #bfced6; 
+			border: none;
+			font-family: 'Opensans Bold';
+			padding-left: 10px;
+		}
+		&:focus{
+			background-color: #bfced6; 
+			outline: 0;
+			font-size: 15px;
+			font-family: 'Opensans Bold';
+		}
+		span.text{
+			padding: 0 10px;
+		}
+	}
+	&.disabled{
+		.btn{
+			opacity: 1!important;
+			background-color: #eeeeee!important;
+			font-family: 'Opensans Light'!important;
+			font-size: 14px!important;
+			color: #585858!important;
+		}
+	}
+}
+
+.bootstrap-select.btn-group.open {
+	.btn{
+		.caret{
+			@include rotate(180deg);
+		}
+	}
+	.dropdown-toggle{
+		-ms-box-shadow: none; 
+		-moz-box-shadow: none; 
+		-webkit-box-shadow: none; 
+		box-shadow: none;
+	}
+}
+
+
+/* --------------- STYLE 1 ------------------ */
+	.select-style-1{
+		.bootstrap-select.btn-group{
+			margin-bottom: 50px;
+			.btn{
+				padding: 10px 20px;
+				border: none;
+				border-bottom: 1px solid #656d7c;
+				font-family: 'Libre Regular';
+				font-size: 14px;
+				color: #898d95;
+				letter-spacing: 0;
+				line-height: 16px;
+				@include borderRadius(all, 0px);
+				.caret{
+					background: url('#{$urlImg}icone-btn-conheca.png') no-repeat center; 
+					background-size: 9px 14px;
+					@include rotate(90deg);
+				}
+			}
+			&.open {
+				.btn{
+					.caret{
+						@include rotate(270deg);
+					}
+				}
+			}
+			.dropdown-menu{
+				background-color: #f7f7f7;
+				ul li a{
+					font-family: 'Libre Regular';
+					font-size: 14px;
+					color: #1d2534;
+					letter-spacing: 0;
+					&:hover{
+						padding-left: 0;
+						background-color: #f15c26; 
+						font-family: 'Libre Regular';
+						color: #FFF;
+					}
+					&:focus{
+						background-color: #f15c26; 
+						font-family: 'Libre Regular';
+						color: #FFF;
+						letter-spacing: 0;
+						outline: 0;
+						&:hover{
+							padding-left: 0;
+						}
+					}
+					span.text{
+						padding: 0 20px;
+					}
+				}
+			}
+		}
+	}
+/* --------------- STYLE 1 ------------------ */

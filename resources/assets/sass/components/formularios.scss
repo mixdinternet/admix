@@ -1,0 +1,102 @@
+/* ---------------------- PADRÃO ------------------------- */
+.formulario{
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	input[type=checkbox], input[type=radio]{
+		margin: 0;
+		padding: 0;
+	}
+
+	label{
+		margin: 0;
+		padding: 0;
+	}
+
+	.input-text{
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		outline: 0;
+	}
+
+	.input-area{
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		outline: 0;
+		resize: none;
+	}
+
+	.etiqueta{
+		float: left;
+		width: 100%;
+	}
+
+	.input-radio{
+		float: left;
+		outline: 0;
+	}
+
+	.etiqueta-radio{
+		display: inline-block;
+		padding-left: 10px;
+		line-height: 12px;
+	}
+
+	.btn-enviar{
+		display: table;
+		width: 100%;
+		margin: 0 auto;
+		outline: 0;
+	}	
+}
+/* ---------------------- PADRÃO ------------------------- */
+
+
+
+
+/* ---------------------- STYLE 1 ------------------------- */
+.formulario.form-style-1{
+	.input-text, .input-area{
+		margin-bottom: 50px;
+		padding-bottom: 10px;
+		padding-left: 20px;
+		border: none;
+		border-bottom: 1px solid #656d7c;
+		font-family: 'Libre Regular';
+		font-size: 14px;
+		color: #898d95;
+	}
+	.input-area{
+		height: 130px;
+		margin-bottom: 0;
+	}
+	::-webkit-input-placeholder {
+		font-family: 'Libre Regular';
+		font-size: 14px;
+		color: #898d95;
+	}
+
+	:-moz-placeholder {
+		font-family: 'Libre Regular';
+		font-size: 14px;
+		color: #898d95;
+	}
+
+	::-moz-placeholder {
+		font-family: 'Libre Regular';
+		font-size: 14px;
+		color: #898d95;
+	}
+
+	:-ms-input-placeholder {  
+		font-family: 'Libre Regular';
+		font-size: 14px;
+		color: #898d95;
+	}
+}
+/* ---------------------- STYLE 1 ------------------------- */

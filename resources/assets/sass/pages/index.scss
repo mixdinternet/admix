@@ -1,0 +1,41 @@
+html{
+	position: relative;
+	body{
+		position: relative;
+		float: left;
+		width: 100%;
+
+		header{
+			position: relative;
+			float: left;
+			width: 100%;
+		}
+
+		main{
+			position: relative;
+			float: left;
+			width: 100%;
+
+			article{
+				float: left;
+				width: 100%;
+				section{
+					position: relative;
+					float: left;
+					width: 100%;
+				}
+			}
+
+		}
+
+		footer{
+			position: relative;
+			float: left;
+			width: 100%;
+		}
+
+	}
+}
+
+/* ------------------------------ PADRÃO -------------------------- */
+/* ------------------------------ PADRÃO -------------------------- */
