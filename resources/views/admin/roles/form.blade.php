@@ -19,26 +19,32 @@
 
                 {!! BootForm::text('name', 'Nome', null, ['data-rule-required' => true, 'maxlength' => '150']) !!}
 
-                <div class="form-group ">
+                <div class="form-group @if($errors->has('rules')) has-error @endif">
                     <label for="permissions" class="control-label col-sm-3 col-md-3">Permissões</label>
 
                     <div class="col-sm-9 col-md-9">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover jq-table-rocket">
                                 <thead>
+                                @if($errors->has('rules'))
+                                    <tr>
+                                        <td colspan="6"><label>{{ $errors->first('rules') }}</label></td>
+                                    </tr>
+                                @endif
                                 <tr>
                                     <th></th>
                                     <th>Listar</th>
                                     <th>Inserir</th>
                                     <th>Editar</th>
                                     <th>Remover</th>
+                                    <th>Restaurar</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach ($rules as $rule)
                                     <tr>
                                         <td>
-                                            <label>{{ $rule->title }}</label>
+                                            {{ $rule->title }}
                                         </td>
                                         <td>
                                             @if (!isset($rule->attributes['except']) || (!in_array('index', $rule->attributes['except'])))
@@ -83,6 +89,18 @@
                                                            value="{{ $rule->url }}.destroy"
                                                            @if(in_array($rule->url . '.destroy', $role->rules)) checked="checked" @endif>
                                                     <label for="checkbox-{{ $rule->url }}.destroy">
+                                                    </label>
+                                                </div>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if (!isset($rule->attributes['except']) || (!in_array('trash', $rule->attributes['except'])))
+                                                <div class="checkbox checkbox-flat">
+                                                    <input type="checkbox" name="rules[]"
+                                                           id="checkbox-{{ $rule->url }}.trash"
+                                                           value="{{ $rule->url }}.trash"
+                                                           @if(in_array($rule->url . '.trash', $role->rules)) checked="checked" @endif>
+                                                    <label for="checkbox-{{ $rule->url }}.trash">
                                                     </label>
                                                 </div>
                                             @endif

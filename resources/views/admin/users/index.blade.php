@@ -5,21 +5,27 @@
 @endsection
 
 @section('btn-insert')
-    @if(!checkRule('admin.users.create'))
-        @include('admin.partials.actions.btn.insert', ['route' => route('admin.users.create'), 'title' => 'Usuário'])
+    @if((!checkRule('admin.users.create')) && (!$trash))
+        @include('admin.partials.actions.btn.insert', ['route' => route('admin.users.create')])
+    @endif
+    @if((!checkRule('admin.users.trash')) && (!$trash))
+        @include('admin.partials.actions.btn.trash', ['route' => route('admin.users.trash')])
+    @endif
+    @if($trash)
+        @include('admin.partials.actions.btn.list', ['route' => 'admin.users.index'])
     @endif
 @endsection
 
 @section('btn-delete-all')
-    @if(!checkRule('admin.users.destroy'))
+    @if((!checkRule('admin.users.destroy')) && (!$trash))
         @include('admin.partials.actions.btn.delete-all', ['route' => 'admin.users.destroy'])
     @endif
 @endsection
 
 @section('search')
-    {!! Form::model($search, ['route' => 'admin.users.index', 'method' => 'get', 'id' => 'form-search'
+    {!! Form::model($search, [
+        'route' => ($trash) ? 'admin.users.trash' : 'admin.users.index', 'method' => 'get', 'id' => 'form-search'
         , 'class' => '']) !!}
-
     <div class="row">
         <div class="col-md-4">
             {!! BootForm::select('status', 'Status', ['' => '-', 'active' => 'Ativo', 'inactive' => 'Inativo'], null
@@ -36,7 +42,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="pull-right">
-                <a href="{{ route('admin.users.index') }}" class="btn btn-default btn-flat">
+                <a href="{{ route(($trash) ? 'admin.users.trash' : 'admin.users.index') }}" class="btn btn-default btn-flat">
                     <i class="fa fa-list"></i>
                     <i class="fs-normal hidden-xs">Mostrar tudo</i>
                 </a>
@@ -55,7 +61,7 @@
         <table class="table table-striped table-hover table-action jq-table-rocket">
             <thead>
             <tr>
-                @if(!checkRule('admin.users.destroy'))
+                @if((!checkRule('admin.users.destroy')) && (!$trash))
                     <th>
                         <div class="checkbox checkbox-flat">
                             <input type="checkbox" id="checkbox-all">
@@ -64,18 +70,17 @@
                         </div>
                     </th>
                 @endif
-                <th>#</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Data de criação</th>
-                <th>Status</th>
+                <th>{!! columnSort('#', ['field' => 'users.id', 'sort' => 'asc']) !!}</th>
+                <th>{!! columnSort('Nome', ['field' => 'users.name', 'sort' => 'asc']) !!}</th>
+                <th>{!! columnSort('Email', ['field' => 'users.email', 'sort' => 'asc']) !!}</th>
+                <th>{!! columnSort('Status', ['field' => 'users.status', 'sort' => 'asc']) !!}</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach ($users as $user)
                 <tr>
-                    @if(!checkRule('admin.users.destroy'))
+                    @if((!checkRule('admin.users.destroy')) && (!$trash))
                         <td>
                             @include('admin.partials.actions.checkbox', ['row' => $user])
                         </td>
@@ -83,14 +88,16 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ Carbon::parse($user->created_at)->format('d/m/Y H:i') }}</td>
                     <td>@include('admin.partials.label.status', ['status' => $user->status])</td>
                     <td>
-                        @if(!checkRule('admin.users.edit'))
-                            @include('admin.partials.actions.btn.edit', ['route' => route('admin.users.edit', $user->id), 'title' => 'Usuário'])
+                        @if((!checkRule('admin.users.edit')) && (!$trash))
+                            @include('admin.partials.actions.btn.edit', ['route' => route('admin.users.edit', $user->id)])
                         @endif
-                        @if(!checkRule('admin.users.destroy'))
+                        @if((!checkRule('admin.users.destroy')) && (!$trash))
                             @include('admin.partials.actions.btn.delete', ['route' => 'admin.users.destroy', 'id' => $user->id])
+                        @endif
+                        @if($trash)
+                            @include('admin.partials.actions.btn.restore', ['route' => 'admin.users.restore', 'id' => $user->id])
                         @endif
                     </td>
                 </tr>
@@ -103,5 +110,5 @@
 @endsection
 
 @section('pagination')
-    {!! $users->appends($search)->render() !!}
+    {!! $users->appends(request()->except(['page']))->render() !!}
 @endsection

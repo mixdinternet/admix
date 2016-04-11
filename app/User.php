@@ -76,7 +76,7 @@ class User extends Model implements AuthenticatableContract,
 
     public function role()
     {
-        return $this->belongsTo('\App\Role');
+        return $this->belongsTo('App\Role');
     }
 
     public function getPermissionsAttribute($value)
@@ -94,9 +94,23 @@ class User extends Model implements AuthenticatableContract,
         $this->attributes['permissions'] = implode(',', $value);
     }
 
-    public function scopeSort($query)
+    public function scopeSort($query, $fields = [])
     {
-        $query->oldest('status');
+        if (count($fields) <= 0) {
+            $fields = [
+                'users.status' => 'asc'
+            ];
+        }
+
+        if (request()->has('field') && request()->has('sort')) {
+            $fields = [request()->get('field') => request()->get('sort')];
+        }
+
+        $query->select('users.*');
+
+        foreach ($fields as $field => $order) {
+            $query->orderBy($field, $order);
+        }
     }
 
     public function scopeActive($query)

@@ -104,6 +104,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'star' => 'destaque'
+        , 'name' => 'nome'
+        , 'rules' => 'permissões'
+    ],
 
 ];

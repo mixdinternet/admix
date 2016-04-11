@@ -19,7 +19,6 @@
         "cviebrock/eloquent-sluggable": "3.1.*",
         "imagine/imagine": "^0.6.3",
         "mixdinternet/laravel-stapler-extra": "^0.1.0",
-        "mixdinternet/cities": "0.1.*",
         "pingpong/menus": "2.1.*",
         "folklore/image": "0.2.*",
         "spatie/laravel-analytics": "^1.3"

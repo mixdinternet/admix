@@ -19,16 +19,21 @@ class RolesAdminController extends AdminController
     {
         session()->put('backUrl', request()->fullUrl());
 
-        $model = Role::sort();
+        $trash = ($request->segment(3) == 'trash') ? true : false;
+
+        $query = Role::sort();
+        ($trash) ? $query->onlyTrashed() : '';
+
         $search = [];
         $search['name'] = $request->input('name', '');
         $search['status'] = $request->input('status', '');
 
-        ($search['name']) ? $model->where('name', 'LIKE', '%' . $search['name'] . '%') : '';
-        ($search['status']) ? $model->where('status', $search['status']) : '';
+        ($search['name']) ? $query->where('name', 'LIKE', '%' . $search['name'] . '%') : '';
+        ($search['status']) ? $query->where('status', $search['status']) : '';
 
-        $roles = $model->paginate(50);
+        $roles = $query->paginate(50);
 
+        $view['trash'] = $trash;
         $view['search'] = $search;
         $view['roles'] = $roles;
 
@@ -82,6 +87,23 @@ class RolesAdminController extends AdminController
         }
 
         return ($url = session()->get('backUrl')) ? redirect($url) : redirect()->route('admin.roles.index');
+    }
+
+    public function restore($id)
+    {
+        $role = Role::onlyTrashed()->find($id);
+
+        if (!$role) {
+            abort(404);
+        }
+
+        if ($role->restore()) {
+            Flash::success('Item restaurado com sucesso.');
+        } else {
+            Flash::error('Falha na restauração.');
+        }
+
+        return ($url = session()->get('backUrl')) ? redirect($url) : redirect()->route('admin.roles.trash');
     }
 
     private function getRules()

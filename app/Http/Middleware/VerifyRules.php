@@ -15,7 +15,7 @@ class VerifyRules
             return redirect()->route('admin.notFound');
         }
 
-        $rule = str_replace(['.store', '.update'], ['.create', '.edit'], $actions['as']);
+        $rule = str_replace(['.store', '.update', '.restore'], ['.create', '.edit', '.trash'], $actions['as']);
         if(checkRule($rule)){
             return redirect()->route('admin.notFound');
         }

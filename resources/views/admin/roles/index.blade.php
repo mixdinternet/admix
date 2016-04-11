@@ -5,21 +5,27 @@
 @endsection
 
 @section('btn-insert')
-    @if(!checkRule('admin.roles.create'))
-        @include('admin.partials.actions.btn.insert', ['route' => route('admin.roles.create'), 'title' => 'Grupos'])
+    @if((!checkRule('admin.roles.create')) && (!$trash))
+        @include('admin.partials.actions.btn.insert', ['route' => route('admin.roles.create')])
+    @endif
+    @if((!checkRule('admin.roles.trash')) && (!$trash))
+        @include('admin.partials.actions.btn.trash', ['route' => route('admin.roles.trash')])
+    @endif
+    @if($trash)
+        @include('admin.partials.actions.btn.list', ['route' => 'admin.roles.index'])
     @endif
 @endsection
 
 @section('btn-delete-all')
-    @if(!checkRule('admin.roles.destroy'))
+    @if((!checkRule('admin.roles.destroy')) && (!$trash))
         @include('admin.partials.actions.btn.delete-all', ['route' => 'admin.roles.destroy'])
     @endif
 @endsection
 
 @section('search')
-    {!! Form::model($search, ['route' => 'admin.roles.index', 'method' => 'get', 'id' => 'form-search'
+    {!! Form::model($search, [
+        'route' => ($trash) ? 'admin.roles.trash' : 'admin.roles.index', 'method' => 'get', 'id' => 'form-search'
         , 'class' => '']) !!}
-
     <div class="row">
         <div class="col-md-4">
             {!! BootForm::select('status', 'Status', ['' => '-', 'active' => 'Ativo', 'inactive' => 'Inativo'], null
@@ -33,7 +39,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="pull-right">
-                <a href="{{ route('admin.roles.index') }}" class="btn btn-default btn-flat">
+                <a href="{{ route(($trash) ? 'admin.roles.trash' : 'admin.roles.index') }}"
+                   class="btn btn-default btn-flat">
                     <i class="fa fa-list"></i>
                     <i class="fs-normal hidden-xs">Mostrar tudo</i>
                 </a>
@@ -52,7 +59,7 @@
         <table class="table table-striped table-hover table-action jq-table-rocket">
             <thead>
             <tr>
-                @if(!checkRule('admin.roles.destroy'))
+                @if((!checkRule('admin.roles.destroy')) && (!$trash))
                     <th>
                         <div class="checkbox checkbox-flat">
                             <input type="checkbox" id="checkbox-all">
@@ -61,16 +68,16 @@
                         </div>
                     </th>
                 @endif
-                <th>#</th>
-                <th>Nome</th>
-                <th>Status</th>
+                <th>{!! columnSort('#', ['field' => 'roles.id', 'sort' => 'asc']) !!}</th>
+                <th>{!! columnSort('Nome', ['field' => 'roles.name', 'sort' => 'asc']) !!}</th>
+                <th>{!! columnSort('Status', ['field' => 'roles.status', 'sort' => 'asc']) !!}</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach ($roles as $role)
                 <tr>
-                    @if(!checkRule('admin.roles.destroy'))
+                    @if((!checkRule('admin.roles.destroy')) && (!$trash))
                         <td>
                             @include('admin.partials.actions.checkbox', ['row' => $role])
                         </td>
@@ -79,11 +86,14 @@
                     <td>{{ $role->name }}</td>
                     <td>@include('admin.partials.label.status', ['status' => $role->status])</td>
                     <td>
-                        @if(!checkRule('admin.roles.edit'))
+                        @if((!checkRule('admin.roles.edit')) && (!$trash))
                             @include('admin.partials.actions.btn.edit', ['route' => route('admin.roles.edit', $role->id), 'title' => 'Permissão'])
                         @endif
-                        @if(!checkRule('admin.roles.destroy'))
+                        @if((!checkRule('admin.roles.destroy')) && (!$trash))
                             @include('admin.partials.actions.btn.delete', ['route' => 'admin.roles.destroy', 'id' => $role->id])
+                        @endif
+                        @if($trash)
+                            @include('admin.partials.actions.btn.restore', ['route' => 'admin.roles.restore', 'id' => $role->id])
                         @endif
                     </td>
                 </tr>
@@ -96,5 +106,5 @@
 @endsection
 
 @section('pagination')
-    {!! $roles->appends($search)->render() !!}
+    {!! $roles->appends(request()->except(['page']))->render() !!}
 @endsection

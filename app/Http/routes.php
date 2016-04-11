@@ -37,6 +37,8 @@ Route::group(['prefix' => config('admin.url')], function () {
         Route::put('/profile', ['uses' => 'UsersAdminController@profileUpdate', 'as' => 'admin.profile.update']);
 
         Route::group(['middleware' => ['auth.rules']], function () {
+            Route::get('users/trash', ['uses' => 'UsersAdminController@index', 'as' => 'admin.users.trash']);
+            Route::post('users/restore/{id}', ['uses' => 'UsersAdminController@restore', 'as' => 'admin.users.restore']);
             Route::resource('users', 'UsersAdminController', [
                 'names' => [
                     'index' => 'admin.users.index',
@@ -48,6 +50,8 @@ Route::group(['prefix' => config('admin.url')], function () {
                 ], 'except' => ['destroy']]);
             Route::delete('users/destroy', ['uses' => 'UsersAdminController@destroy', 'as' => 'admin.users.destroy']);
 
+            Route::get('roles/trash', ['uses' => 'RolesAdminController@index', 'as' => 'admin.roles.trash']);
+            Route::post('roles/restore/{id}', ['uses' => 'RolesAdminController@restore', 'as' => 'admin.roles.restore']);
             Route::resource('roles', 'RolesAdminController', [
                 'names' => [
                     'index' => 'admin.roles.index',

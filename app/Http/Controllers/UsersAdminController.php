@@ -22,18 +22,23 @@ class UsersAdminController extends AdminController
     {
         session()->put('backUrl', request()->fullUrl());
 
-        $model = User::sort();
+        $trash = ($request->segment(3) == 'trash') ? true : false;
+
+        $query = User::sort();
+        ($trash) ? $query->onlyTrashed() : '';
+
         $search = [];
         $search['name'] = $request->input('name', '');
         $search['status'] = $request->input('status', '');
         $search['email'] = $request->input('email', '');
 
-        ($search['name']) ? $model->where('name', 'LIKE', '%' . $search['name'] . '%') : '';
-        ($search['email']) ? $model->where('email', 'LIKE', '%' . $search['email'] . '%') : '';
-        ($search['status']) ? $model->where('status', $search['status']) : '';
+        ($search['name']) ? $query->where('name', 'LIKE', '%' . $search['name'] . '%') : '';
+        ($search['email']) ? $query->where('email', 'LIKE', '%' . $search['email'] . '%') : '';
+        ($search['status']) ? $query->where('status', $search['status']) : '';
 
-        $users = $model->paginate(50);
+        $users = $query->paginate(50);
 
+        $view['trash'] = $trash;
         $view['search'] = $search;
         $view['users'] = $users;
 
@@ -99,6 +104,23 @@ class UsersAdminController extends AdminController
         }
 
         return ($url = session()->get('backUrl')) ? redirect($url) : redirect()->route('admin.users.index');
+    }
+
+    public function restore($id)
+    {
+        $user = User::onlyTrashed()->find($id);
+
+        if (!$user) {
+            abort(404);
+        }
+
+        if ($user->restore()) {
+            Flash::success('Item restaurado com sucesso.');
+        } else {
+            Flash::error('Falha na restauração.');
+        }
+
+        return ($url = session()->get('backUrl')) ? redirect($url) : redirect()->route('admin.users.trash');
     }
 
     public function profile()

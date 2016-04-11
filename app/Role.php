@@ -28,10 +28,23 @@ class Role extends Model
         $this->attributes['rules'] = implode(',', $value);
     }
 
-    public function scopeSort($query)
+    public function scopeSort($query, $fields = [])
     {
-        $query->orderBy('status', 'asc')
-            ->orderBy('name', 'asc');
+        if (count($fields) <= 0) {
+            $fields = [
+                'roles.status' => 'asc'
+            ];
+        }
+
+        if (request()->has('field') && request()->has('sort')) {
+            $fields = [request()->get('field') => request()->get('sort')];
+        }
+
+        $query->select('roles.*');
+
+        foreach ($fields as $field => $order) {
+            $query->orderBy($field, $order);
+        }
     }
 
     public function scopeActive($query)
