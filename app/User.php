@@ -12,33 +12,33 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Codesleeve\Stapler\ORM\StaplerableInterface;
 use Codesleeve\Stapler\ORM\EloquentTrait;
+use Venturecraft\Revisionable\RevisionableTrait;
+
 
 class User extends Model implements AuthenticatableContract,
     AuthorizableContract,
     CanResetPasswordContract,
     StaplerableInterface
 {
-    use SoftDeletes, Authenticatable, Authorizable, CanResetPassword, EloquentTrait;
+    use SoftDeletes, Authenticatable, Authorizable, CanResetPassword, EloquentTrait, RevisionableTrait;
 
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
+    protected $revisionCreationsEnabled = true;
+
+    protected $revisionFormattedFieldNames = [
+        'name' => 'nome'
+        , 'password' => 'senha'
+        , 'image' => 'imagem'
+        , 'role_id' => 'grupo'
+    ];
+
+    protected $revisionFormattedFields = [
+        'password' => 'string:********',
+    ];
+
     protected $dates = ['deleted_at'];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = ['status', 'name', 'email', 'password', 'image', 'role_id'];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
     protected $hidden = ['password', 'remember_token'];
 
     public function __construct(array $attributes = array())
@@ -59,20 +59,10 @@ class User extends Model implements AuthenticatableContract,
         parent::__construct($attributes);
     }
 
-    /*public static function boot()
+    public static function boot()
     {
-        // Call the bootStapler() method to register stapler as an observer for this model.
-        static::bootStapler();
-
-        // Now, before the record is saved, set the filename attribute on the model:
-        static::saving(function($model)
-        {
-            $pathInfo = pathinfo($model->image->originalFileName());
-            $newFilename = str_slug($pathInfo['filename'], '-') . '.' . $pathInfo['extension'];
-            #dd($newFilename);
-            $model->image->instanceWrite('file_name', $newFilename);
-        });
-    }*/
+        parent::boot();
+    }
 
     public function role()
     {

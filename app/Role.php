@@ -4,18 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Venturecraft\Revisionable\RevisionableTrait;
+
 
 class Role extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, RevisionableTrait;
+
+    protected $revisionCreationsEnabled = true;
+
+    protected $revisionFormattedFieldNames = [
+        'name' => 'nome'
+        , 'rules' => 'permissões'
+    ];
 
     protected $dates = ['deleted_at'];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = ['status', 'name', 'rules'];
 
     public function getRulesAttribute($value)
@@ -50,5 +54,11 @@ class Role extends Model
     public function scopeActive($query)
     {
         $query->where('status', 'active')->sort();
+    }
+
+    # revision
+    public function identifiableName()
+    {
+        return $this->name;
     }
 }

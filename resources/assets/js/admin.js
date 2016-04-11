@@ -8,6 +8,9 @@ $.extend($.validator.messages, {
 
 //$(window).load(function(){
 $(function () {
+
+    $('[data-toggle="popover"]').popover();
+
     if ($.mask) {
         $('.mask-phone').focusout(function () {
             var phone, element;
@@ -20,6 +23,7 @@ $(function () {
                 element.mask("(99) 9999-9999?9");
             }
         }).trigger('focusout');
+
 
         //http://alexjunioralves.blogspot.com.br/2013/08/mascara-cpfcnpj-para-o-mesmo-campo.html
         $('.mask-cpfcnpj').on('keyup', function () {

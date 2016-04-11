@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'FrontendController@welcome');
 Route::get('robots.txt', 'RobotsController@index');
 Route::get('deploy', 'DeployController@index');
 

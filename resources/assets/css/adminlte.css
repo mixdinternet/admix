@@ -1493,6 +1493,10 @@ a:focus {
   box-shadow: none;
 }
 
+.form-group.has-success .help-block {
+  color: #1a8468;
+}
+
 .form-group.has-warning label {
   color: #e89d00;
 }
@@ -1502,6 +1506,10 @@ a:focus {
   box-shadow: none;
 }
 
+.form-group.has-warning .help-block {
+  color: #e89d00;
+}
+
 .form-group.has-error label {
   color: #d92a18;
 }
@@ -1509,6 +1517,10 @@ a:focus {
 .form-group.has-error .form-control {
   border-color: #d92a18;
   box-shadow: none;
+}
+
+.form-group.has-error .help-block {
+  color: #d92a18;
 }
 
 /* Input group */
@@ -1753,7 +1765,7 @@ a:focus {
 
 .small-box h3,
 .small-box p {
-  z-index: 5px;
+  z-index: 5;
 }
 
 .small-box .icon {

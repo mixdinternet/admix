@@ -109,7 +109,7 @@ elixir(function(mix) {
 
         .scripts([
             'node_modules/blueimp-load-image/js/load-image.all.min.js',
-            'node_modules/admin-lte/plugins/jQuery/jQuery-2.1.4.min.js',
+            'node_modules/jquery/dist/jquery.min.js',
             'node_modules/moment/min/moment.min.js',
             'node_modules/moment/locale/pt-br.js',
             'node_modules/bootstrap-fileinput/js/plugins/canvas-to-blob.min.js',

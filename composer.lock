@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6df515379ded21c8e1c52d21ab6a06cf",
-    "content-hash": "78958a7a748b1508cc95852e3a2f2ea7",
+    "hash": "fd91b3c532c0a298db5e51552ff66ddc",
+    "content-hash": "66d4972576a67dd035b3a8cefe0f88e1",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -1484,6 +1484,143 @@
             "time": "2016-01-29 10:46:45"
         },
         {
+            "name": "mixdinternet/maudit",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mixdinternet/maudit.git",
+                "reference": "a34b70e81a13c0da98cd5ed98a4bedf0c8db3639"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mixdinternet/maudit/zipball/a34b70e81a13c0da98cd5ed98a4bedf0c8db3639",
+                "reference": "a34b70e81a13c0da98cd5ed98a4bedf0c8db3639",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*",
+                "php": ">=5.5.9",
+                "venturecraft/revisionable": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mixdinternet\\Maudit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Irineu Martins Junior",
+                    "email": "irineu@mixd.com.br",
+                    "homepage": "http://www.mixd.com.br/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Lista as ações dos usuários no admix",
+            "keywords": [
+                "Audit",
+                "laravel",
+                "log"
+            ],
+            "time": "2016-04-11 17:25:25"
+        },
+        {
+            "name": "mixdinternet/mcache",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mixdinternet/mcache.git",
+                "reference": "e087808a707ad1d09288a843fb5185076ee7067a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mixdinternet/mcache/zipball/e087808a707ad1d09288a843fb5185076ee7067a",
+                "reference": "e087808a707ad1d09288a843fb5185076ee7067a",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mixdinternet\\Mcache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Irineu Martins Junior",
+                    "email": "irineu@mixd.com.br",
+                    "homepage": "http://www.mixd.com.br/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Pacote de limpeza de cache / otimização da aplicação",
+            "keywords": [
+                "cache",
+                "laravel",
+                "otimização"
+            ],
+            "time": "2016-04-11 16:46:42"
+        },
+        {
+            "name": "mixdinternet/mconfig",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mixdinternet/mconfig.git",
+                "reference": "35c3b150f7653b3ca7b935203fff3f5b9c94a4a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mixdinternet/mconfig/zipball/35c3b150f7653b3ca7b935203fff3f5b9c94a4a1",
+                "reference": "35c3b150f7653b3ca7b935203fff3f5b9c94a4a1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*",
+                "mixdinternet/maudit": "0.1.*",
+                "mixdinternet/mcache": "0.1.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mixdinternet\\Mconfig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Irineu Martins Junior",
+                    "email": "irineu@mixd.com.br",
+                    "homepage": "http://www.mixd.com.br/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Agrupa os módulos de configuração do Admix",
+            "keywords": [
+                "Audit",
+                "cache",
+                "laravel",
+                "log",
+                "otimização"
+            ],
+            "time": "2016-04-11 18:56:14"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.18.2",
             "source": {
@@ -2959,6 +3096,54 @@
                 "dump"
             ],
             "time": "2016-03-07 11:06:07"
+        },
+        {
+            "name": "venturecraft/revisionable",
+            "version": "1.27.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/VentureCraft/revisionable.git",
+                "reference": "dcf9f15f9eacee0d6df730b2155f78e859d19335"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/VentureCraft/revisionable/zipball/dcf9f15f9eacee0d6df730b2155f78e859d19335",
+                "reference": "dcf9f15f9eacee0d6df730b2155f78e859d19335",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.0|~5.0|~5.1",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Venturecraft\\Revisionable": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Duell",
+                    "email": "me@chrisduell.com"
+                }
+            ],
+            "description": "Keep a revision history for your models without thinking, created as a package for use with Laravel",
+            "homepage": "http://github.com/venturecraft/revisionable",
+            "keywords": [
+                "ardent",
+                "history",
+                "laravel",
+                "model",
+                "revision"
+            ],
+            "time": "2016-02-09 00:15:03"
         },
         {
             "name": "vlucas/phpdotenv",

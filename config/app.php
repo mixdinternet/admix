@@ -161,6 +161,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Folklore\Image\ImageServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Mixdinternet\Mconfig\Providers\MconfigServiceProvider::class,
     ],
 
     /*

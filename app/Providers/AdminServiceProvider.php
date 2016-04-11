@@ -29,7 +29,7 @@ class AdminServiceProvider extends ServiceProvider
                     }])->hideWhen(function () {
                     return checkRule('admin.roles.index');
                 });
-            }, ['icon' => 'fa fa-users'])->hideWhen(function(){
+            }, 1, ['icon' => 'fa fa-users'])->hideWhen(function(){
                 return checkRule(['admin.users.index', 'admin.roles.index']);
             });
         });
