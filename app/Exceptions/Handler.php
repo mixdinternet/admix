@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Session\TokenMismatchException;
+use App\Exceptions\AdmixExceptions;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Flash;
 
@@ -52,10 +53,13 @@ class Handler extends ExceptionHandler
             Flash::error('Sua sessão expirou. Atualize a página usando o Ctrl+F5 e tente novamente.');
             return redirect()
                 ->back()
-                ->withInput($request->except('password'))
-                ->with([
-                    'message' => 'Sua sessão expirou',
-                    'message-type' => 'danger']);
+                ->withInput($request->except('password'));
+        }
+
+        if ($e instanceof AdmixException) {
+            Flash::error($e->getMessage());
+            return redirect()
+                ->back();
         }
 
         return parent::render($request, $e);

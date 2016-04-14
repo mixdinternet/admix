@@ -858,16 +858,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.3",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b"
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2e89629ff057ebb49492ba08e6995d3a6a80021b",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/31382fef2889136415751badebbd1cb022a4ed72",
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72",
                 "shasum": ""
             },
             "require": {
@@ -912,7 +912,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-02-18 21:54:00"
+            "time": "2016-04-13 19:56:01"
         },
         {
             "name": "imagine/imagine",
@@ -1574,22 +1574,23 @@
         },
         {
             "name": "mixdinternet/mconfig",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mixdinternet/mconfig.git",
-                "reference": "35c3b150f7653b3ca7b935203fff3f5b9c94a4a1"
+                "reference": "8f1f48f798592631ce2079adcad6b402e06c643f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mixdinternet/mconfig/zipball/35c3b150f7653b3ca7b935203fff3f5b9c94a4a1",
-                "reference": "35c3b150f7653b3ca7b935203fff3f5b9c94a4a1",
+                "url": "https://api.github.com/repos/mixdinternet/mconfig/zipball/8f1f48f798592631ce2079adcad6b402e06c643f",
+                "reference": "8f1f48f798592631ce2079adcad6b402e06c643f",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "5.1.*",
                 "mixdinternet/maudit": "0.1.*",
                 "mixdinternet/mcache": "0.1.*",
+                "mixdinternet/mmails": "0.1.*",
                 "php": ">=5.5.9"
             },
             "type": "library",
@@ -1618,20 +1619,63 @@
                 "log",
                 "otimização"
             ],
-            "time": "2016-04-11 18:56:14"
+            "time": "2016-04-14 19:28:46"
         },
         {
-            "name": "monolog/monolog",
-            "version": "1.18.2",
+            "name": "mixdinternet/mmails",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09"
+                "url": "https://github.com/mixdinternet/mmails.git",
+                "reference": "28dfe9ee1bcde222494b13a7be7f70c4574c6854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/064b38c16790249488e7a8b987acf1c9d7383c09",
-                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09",
+                "url": "https://api.github.com/repos/mixdinternet/mmails/zipball/28dfe9ee1bcde222494b13a7be7f70c4574c6854",
+                "reference": "28dfe9ee1bcde222494b13a7be7f70c4574c6854",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mixdinternet\\Mmails\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Irineu Martins Junior",
+                    "email": "irineu@mixd.com.br",
+                    "homepage": "http://www.mixd.com.br/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permite a configuração dos e-mails no Admix",
+            "keywords": [
+                "laravel",
+                "mail"
+            ],
+            "time": "2016-04-14 19:12:22"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "1.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
                 "shasum": ""
             },
             "require": {
@@ -1696,7 +1740,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-04-02 13:12:58"
+            "time": "2016-04-12 18:29:35"
         },
         {
             "name": "mtdowling/cron-expression",
