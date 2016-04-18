@@ -45,7 +45,7 @@ class User extends Model implements AuthenticatableContract,
     {
         $this->hasAttachedFile('image', [
             'styles' => [
-                'crop' => function($file, $imagine) {
+                'crop' => function ($file, $imagine) {
                     $image = $imagine->open($file->getRealPath());
                     $image->crop(new \Imagine\Image\Point(request()->input('crop.image.x'), request()->input('crop.image.y'))
                         , new \Imagine\Image\Box(request()->input('crop.image.w'), request()->input('crop.image.h')));
@@ -62,6 +62,8 @@ class User extends Model implements AuthenticatableContract,
     public static function boot()
     {
         parent::boot();
+
+        static::bootStapler();
     }
 
     public function role()
