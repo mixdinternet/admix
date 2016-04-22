@@ -108,6 +108,7 @@ return [
         'star' => 'destaque'
         , 'name' => 'nome'
         , 'rules' => 'permissões'
+        , 'password' => 'senha'
     ],
 
 ];
