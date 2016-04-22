@@ -49,8 +49,8 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Carbon::setLocale($this->app->getLocale());
-        setlocale (LC_ALL, $this->app->getLocale().'.utf8');
+        Carbon::setLocale(config('app.locale'));
+        setlocale (LC_ALL, config('app.locale').'.utf8');
 
         //define um atalho para retornar o usuário vinculado à rota
         $this->app->bind('currentUser', function ($app) {
