@@ -109,6 +109,7 @@ return [
         , 'name' => 'nome'
         , 'rules' => 'permissões'
         , 'password' => 'senha'
+        , 'published_at' => 'data de publicação'
     ],
 
 ];
