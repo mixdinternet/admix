@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Menu;
+use Carbon;
 
 class AdminServiceProvider extends ServiceProvider
 {
@@ -48,7 +49,8 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Carbon::setLocale($this->app->getLocale());
+        setlocale (LC_ALL, $this->app->getLocale().'.utf8');
 
         //define um atalho para retornar o usuário vinculado à rota
         $this->app->bind('currentUser', function ($app) {
