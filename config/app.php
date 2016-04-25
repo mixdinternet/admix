@@ -152,6 +152,7 @@ return [
          */
         Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider::class,
         Codesleeve\LaravelStapler\Providers\L5ServiceProvider::class,
+        Mixdinternet\Mconfig\Providers\MconfigServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         Watson\BootstrapForm\BootstrapFormServiceProvider::class,
@@ -161,7 +162,11 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Folklore\Image\ImageServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        Mixdinternet\Mconfig\Providers\MconfigServiceProvider::class,
+
+        /*
+         * Packages Service Providers
+         */
+
     ],
 
     /*

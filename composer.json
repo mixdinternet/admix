@@ -22,7 +22,8 @@
         "pingpong/menus": "2.1.*",
         "folklore/image": "0.2.*",
         "spatie/laravel-analytics": "^1.3",
-        "mixdinternet/mconfig": "0.1.*"
+        "mixdinternet/mconfig": "0.1.*",
+        "mixdinternet/articles": "0.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
