@@ -7,7 +7,6 @@
 @import "variables.less";
 @import "@{path}mixins.less";
 
-
 .fs-normal {
   font-style: normal;
 }
@@ -161,7 +160,6 @@ select option[disabled], .select2-container--default .select2-results__option[ar
   visibility: hidden; /* worked in chrome*/
 }
 
-
 /* melhorar isso aqui */
 .table > tbody > tr.danger > td {
   background: #ffdedd;
@@ -182,8 +180,8 @@ select option[disabled], .select2-container--default .select2-results__option[ar
   background: #dbf0f7;
   border-color: #b6e2ef;
 }
-/* fim melhorar isso aqui */
 
+/* fim melhorar isso aqui */
 
 .pagination > li:first-child > a,
 .pagination > li:first-child > span,
@@ -284,6 +282,31 @@ ul.sortable {
   height: 200px;
   margin-top: 20px;
 }
+
+/* summernote */
+.note-popover .popover-content .note-para .dropdown-menu, .panel-heading.note-toolbar .note-para .dropdown-menu {
+  min-width: 217px;
+}
+
+.note-btn, .dropdown-menu {
+  border-radius: 0;
+}
+
+.note-editor.note-frame {
+  border-radius: 0;
+  border-color: #d2d6de;
+}
+
+.note-editor .modal .form-group {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.note-image-btn, .note-video-btn, .note-link-btn {
+  border-radius: 0;
+}
+
+/* fim summernote */
 
 @media (max-width: 991px) {
   .error-page > .error-content > p {

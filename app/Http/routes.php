@@ -29,6 +29,7 @@ Route::group(['prefix' => config('admin.url')], function () {
     Route::group(['middleware' => ['auth.admin']], function () {
         Route::get('/', ['uses' => 'AdminController@dashboard', 'as' => 'admin.dashboard']);
         Route::get('/not-found', ['uses' => 'AdminController@notFound', 'as' => 'admin.notFound']);
+        Route::post('/summernote', ['uses' => 'AdminController@summernote', 'as' => 'admin.summernote']);
 
         Route::get('/profile', ['uses' => 'UsersAdminController@profile', 'as' => 'admin.profile']);
         Route::put('/profile', ['uses' => 'UsersAdminController@profileUpdate', 'as' => 'admin.profile.update']);

@@ -94,6 +94,7 @@ elixir(function(mix) {
         .styles([
             'node_modules/admin-lte/bootstrap/css/bootstrap.min.css',
             'node_modules/admin-lte/plugins/select2/select2.min.css',
+            'node_modules/summernote/dist/summernote.css',
             'resources/assets/css/adminlte.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
             'node_modules/ionicons/css/ionicons.min.css',
@@ -125,6 +126,8 @@ elixir(function(mix) {
             'node_modules/bootbox/bootbox.min.js',
             'node_modules/bootstrap-notify/bootstrap-notify.min.js',
             'node_modules/jquery-jcrop/js/jquery.Jcrop.min.js',
+            'node_modules/summernote/dist/summernote.min.js',
+            'node_modules/summernote/dist/lang/summernote-pt-BR.min.js',
             'node_modules/admin-lte/plugins/select2/select2.full.min.js',
             'node_modules/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js',
             'node_modules/admin-lte/plugins/fastclick/fastclick.js',

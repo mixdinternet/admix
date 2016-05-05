@@ -407,4 +407,41 @@ $(function () {
         var ctx = $("#" + $(this).attr('id')).get(0).getContext("2d");
         new Chart(ctx).Line(eval($(this).attr('id') + 'Data'), lineChartOptions);
     });
+
+    $(".jq-summernote").summernote({
+        toolbar: [
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ],
+        lang: "pt-BR",
+        callbacks: {
+            onImageUpload: function(files) {
+                var file = files[0];
+                var that = $(this);
+                var data = new FormData();
+                data.append("file", file);
+                data.append("_token", $('meta[name=csrf_token]').attr('content'));
+                $.ajax({
+                    data: data,
+                    type: "POST",
+                    url: that.data('upload') || $('meta[name=summernoteUpload]').attr('content'),
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function(url) {
+                        var image = $('<img>').attr('src', url);
+                        that.summernote("insertNode", image[0]);
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+
+            }
+        }
+    });
+
 });

@@ -166,6 +166,8 @@ return [
         /*
          * Packages Service Providers
          */
+        Mixdinternet\Articles\Providers\ArticlesServiceProvider::class,
+        Mixdinternet\Seo\Providers\SeoServiceProvider::class,
 
     ],
 

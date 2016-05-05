@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use Auth;
 use LaravelAnalytics;
 use Carbon\Carbon;
+use Image;
 
 
 class AdminController extends AuthController
@@ -72,5 +73,36 @@ class AdminController extends AuthController
     public function notFound()
     {
         return view("admin.errors.404");
+    }
+
+    public function summernote()
+    {
+        $request = request();
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+
+            $extension = $file->getClientOriginalExtension();
+            $fileName = date('Ymdhis') . '-' . rand(11111,99999) . '.' . $extension;
+
+            $file->move(storage_path('cache'), $fileName);
+
+            $fileInfo = array_values(getimagesize(storage_path('cache/') . $fileName));
+            list($width, $height, $type, $attr) = $fileInfo;
+
+            $width = ($width > 800) ? 800 : null;
+            $height = ($height > 600) ? 600 : null;
+
+            $targetPath = public_path('media/summernote/');
+            @mkdir($targetPath, 0775, true);
+            Image::make(storage_path('cache/') . $fileName, [
+                'width' => $width,
+                'height' => $height
+            ])->save($targetPath . $fileName);
+
+            #Image::thumbnail(storage_path('cache/') . $fileName, 640, 480, true)->save($targetPath . $fileName);
+
+            return '/media/summernote/' . $fileName;
+        }
     }
 }
