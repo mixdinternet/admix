@@ -15,4 +15,7 @@
     RewriteRule ^ index.php [L]
     RewriteRule ^robots\.txt$ index.php
 
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
 </IfModule>
