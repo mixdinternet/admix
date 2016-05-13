@@ -98,7 +98,7 @@ $(window).load(function () {
 
     $('.jq-form-validate').each(function () {
         var id = $(this).attr('id');
-        $("#" + id).validate({
+        $('#' + id).validate({
             errorElement: 'span',
             errorClass: 'help-block',
             errorPlacement: function (error, element) {
@@ -117,6 +117,10 @@ $(window).load(function () {
                 } else {
                     $(element).removeClass(errorClass).addClass(validClass).parent().parent().addClass('has-success').removeClass('has-error').find('span.help-block').hide();
                 }
+            },
+            submitHandler: function() {
+                $('#' + id + ' input[type=submit]').prop('disabled','true').css('opacity','.7');
+                return true
             }
         });
     });

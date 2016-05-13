@@ -125,6 +125,10 @@ $(function () {
                 } else {
                     $(element).removeClass(errorClass).addClass(validClass).parent().parent().addClass('has-success').removeClass('has-error').find('span.help-block').hide();
                 }
+            },
+            submitHandler: function() {
+                $('#' + id + ' input[type=submit]').prop('disabled','true').css('opacity','.7');
+                return true
             }
         });
     });
