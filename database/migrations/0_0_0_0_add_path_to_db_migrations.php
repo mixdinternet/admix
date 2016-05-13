@@ -12,7 +12,7 @@ class AddPathToDbMigrations extends Migration
     public function up()
     {
         Schema::table(config('database.migrations'), function ($table) {
-            $table->string('path')->after('migration');
+            $table->string('path')->default('')->after('migration');
         });
     }
 
