@@ -151,6 +151,7 @@ return [
          * Third Parts Service Providers
          */
         Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider::class,
+        Zingle\LaravelMigrator\LaravelMigratorServiceProvider::class,
         Codesleeve\LaravelStapler\Providers\L5ServiceProvider::class,
         Mixdinternet\Mconfig\Providers\MconfigServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
@@ -166,8 +167,6 @@ return [
         /*
          * Packages Service Providers
          */
-        Mixdinternet\Articles\Providers\ArticlesServiceProvider::class,
-        Mixdinternet\Seo\Providers\SeoServiceProvider::class,
 
     ],
 

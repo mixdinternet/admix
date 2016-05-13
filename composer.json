@@ -23,7 +23,8 @@
         "folklore/image": "0.2.*",
         "spatie/laravel-analytics": "^1.3",
         "mixdinternet/mconfig": "0.1.*",
-        "mixdinternet/articles": "0.1.*"
+        "jenssegers/rollbar": "^1.5",
+        "zingle/laravel5-migrator": "^0.9.8"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
