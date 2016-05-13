@@ -31,6 +31,10 @@
             </div>
 
             <div class="box-footer clearfix">
+                <span class="no-margin pull-left hidden-xs pagination-showing">
+                    @yield('pagination-showing')
+                </span>
+
                 <span class="no-margin pull-right">
                     @yield('pagination')
                 </span>

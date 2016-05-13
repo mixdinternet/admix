@@ -108,3 +108,7 @@
 @section('pagination')
     {!! $roles->appends(request()->except(['page']))->render() !!}
 @endsection
+
+@section('pagination-showing')
+    @include('admin.partials.pagination-showing', ['model' => $roles])
+@endsection

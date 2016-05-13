@@ -112,3 +112,7 @@
 @section('pagination')
     {!! $users->appends(request()->except(['page']))->render() !!}
 @endsection
+
+@section('pagination-showing')
+    @include('admin.partials.pagination-showing', ['model' => $users])
+@endsection
