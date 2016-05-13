@@ -64,7 +64,7 @@
             "npm install",
             "gulp",
             "php -r \"touch('storage/database.sqlite');\"",
-            "php artisan migrate",
+            "php artisan migrate:packages",
             "php artisan db:seed"
         ]
     },
