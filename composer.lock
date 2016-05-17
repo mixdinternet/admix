@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "42dc9f9e0525cdbee39be2d2cb2b4943",
+    "hash": "792577964dad60535b0d55cd3a075ac5",
     "content-hash": "eab7f122acf716a43a7d601b0f2d4a23",
     "packages": [
         {
@@ -1537,16 +1537,16 @@
         },
         {
             "name": "mixdinternet/maudit",
-            "version": "0.1.1",
+            "version": "0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mixdinternet/maudit.git",
-                "reference": "a34b70e81a13c0da98cd5ed98a4bedf0c8db3639"
+                "reference": "6b46c389b6d4db8ab5212692ad7631dbfbfd996a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mixdinternet/maudit/zipball/a34b70e81a13c0da98cd5ed98a4bedf0c8db3639",
-                "reference": "a34b70e81a13c0da98cd5ed98a4bedf0c8db3639",
+                "url": "https://api.github.com/repos/mixdinternet/maudit/zipball/6b46c389b6d4db8ab5212692ad7631dbfbfd996a",
+                "reference": "6b46c389b6d4db8ab5212692ad7631dbfbfd996a",
                 "shasum": ""
             },
             "require": {
@@ -1578,7 +1578,7 @@
                 "laravel",
                 "log"
             ],
-            "time": "2016-04-11 17:25:25"
+            "time": "2016-05-13 19:27:53"
         },
         {
             "name": "mixdinternet/mcache",
@@ -1675,16 +1675,16 @@
         },
         {
             "name": "mixdinternet/mmails",
-            "version": "0.1.2",
+            "version": "0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mixdinternet/mmails.git",
-                "reference": "57d75fef5f580f101148e4848a8e4e45a687a379"
+                "reference": "a29d6202f7d3925844be9a20cff62bc263e639b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mixdinternet/mmails/zipball/57d75fef5f580f101148e4848a8e4e45a687a379",
-                "reference": "57d75fef5f580f101148e4848a8e4e45a687a379",
+                "url": "https://api.github.com/repos/mixdinternet/mmails/zipball/a29d6202f7d3925844be9a20cff62bc263e639b0",
+                "reference": "a29d6202f7d3925844be9a20cff62bc263e639b0",
                 "shasum": ""
             },
             "require": {
@@ -1714,7 +1714,7 @@
                 "laravel",
                 "mail"
             ],
-            "time": "2016-04-14 19:48:04"
+            "time": "2016-05-13 19:34:07"
         },
         {
             "name": "monolog/monolog",
