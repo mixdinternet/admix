@@ -12,6 +12,7 @@
     {{-- <link rel="stylesheet" href="{{ elixir('assets/css/app.css') }}"/> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}"/>
 
+    @yield('header-scripts')
 </head>
 <body class="skin-admix fixed sidebar-mini---- ">
 <div class="wrapper">
@@ -35,6 +36,8 @@
 </div>
 
 <script src="{{ asset('assets/js/admin.js') }}"></script>
+
+@yield('footer-scripts')
 
 @include('flash::message')
 

@@ -130,6 +130,6 @@ return [
     | records have been removed.
     |
     */
-    'preserve_files' => false,
+    'preserve_files' => true,
 
 ];

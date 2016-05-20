@@ -47,9 +47,10 @@ class User extends Model implements AuthenticatableContract,
             'styles' => [
                 'crop' => function ($file, $imagine) {
                     $image = $imagine->open($file->getRealPath());
-                    $image->crop(new \Imagine\Image\Point(request()->input('crop.image.x'), request()->input('crop.image.y'))
-                        , new \Imagine\Image\Box(request()->input('crop.image.w'), request()->input('crop.image.h')));
-
+                    if (request()->input('crop.image.w') >= 0 && request()->input('crop.image.y') >= 0) {
+                        $image->crop(new \Imagine\Image\Point(request()->input('crop.image.x'), request()->input('crop.image.y'))
+                            , new \Imagine\Image\Box(request()->input('crop.image.w'), request()->input('crop.image.h')));
+                    }
                     return $image;
                 }
             ],
