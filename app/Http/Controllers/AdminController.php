@@ -93,7 +93,7 @@ class AdminController extends AuthController
             $width = ($width > 800) ? 800 : null;
             $height = ($height > 600) ? 600 : null;
 
-            $targetPath = public_path('media/summernote/');
+            $targetPath = public_path('media/summernote/' . date('y/m/d/'));
             @mkdir($targetPath, 0775, true);
             Image::make(storage_path('cache/') . $fileName, [
                 'width' => $width,
