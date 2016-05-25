@@ -447,4 +447,73 @@ $(function () {
             }
         }
     });
+
+    /* Box Fixed */
+        if($('html').find('.jq-box-fixed').size() > 0){
+            var element_config = {
+                element: $('.jq-box-fixed'),
+                space: $('.navbar-static-top').outerHeight(),
+                top: '',
+                width: '',
+                height: '',
+                css_initial: function(){
+                    return {
+                        position: 'relative',
+                        top: 0
+                    }
+                },
+                css_fixed: function(){
+                    return {
+                        position: 'fixed',
+                        top: element_config.space,
+                        width: element_config.width,
+                        'z-index': 999999999,
+                        'background-color': '#FFF',
+                    }
+                },
+
+
+                get_height: function(){
+                    element_config.height = element_config.element.outerHeight();
+                },
+
+                get_width: function(){
+                    element_config.width = element_config.element.outerWidth();
+                },
+
+                get_top: function(){
+                    element_config.top = element_config.element.offset().top - element_config.space;
+                },
+
+                set_css: function(status){
+                    if(status == "add"){
+                        element_config.element.css(element_config.css_fixed());
+                    }
+
+                    if(status == "remove"){
+                        element_config.element.css(element_config.css_initial());
+                    }
+                },
+
+                init: function(){
+                    element_config.get_top();
+                    element_config.get_width();
+                    element_config.get_height();
+                }
+            };
+
+
+            var element_scroll = element_config;
+            element_scroll.init();
+            $(window).on('scroll', function(){
+                if($(window).scrollTop() >= element_scroll.top){
+                    element_scroll.set_css("add");
+                    element_scroll.element.parent().css('padding-top', element_scroll.height);
+                }else{
+                    element_scroll.set_css("remove");
+                    element_scroll.element.parent().css('padding-top', 0);
+                }
+            });
+        }
+    /* // */    
 });

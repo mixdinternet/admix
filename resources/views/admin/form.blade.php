@@ -3,7 +3,7 @@
 @section('content')
     <section class="content">
         <div class="box flat">
-            <div class="box-header with-border">
+            <div class="box-header with-border jq-box-fixed">
                 <h3 class="box-title">
 
                     @yield('title')
