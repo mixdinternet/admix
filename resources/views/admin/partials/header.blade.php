@@ -1,5 +1,8 @@
 <header class="main-header">
-    <a href="{{ route('admin.dashboard') }}" class="logo">{!! config('admin.name') !!}</a>
+    <a href="{{ route('admin.dashboard') }}" class="logo">
+        <span class="logo-lg">{!! config('admin.name') !!}</span>
+        <span class="logo-mini">{!! config('admin.name_mini') !!}</span>
+    </a>
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">

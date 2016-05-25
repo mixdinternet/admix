@@ -467,7 +467,7 @@ $(function () {
                         position: 'fixed',
                         top: element_config.space,
                         width: element_config.width,
-                        'z-index': 999999999,
+                        'z-index': 800,
                         'background-color': '#FFF',
                     }
                 },
@@ -478,7 +478,7 @@ $(function () {
                 },
 
                 get_width: function(){
-                    element_config.width = element_config.element.outerWidth();
+                    element_config.width = element_config.element.parent().outerWidth();
                 },
 
                 get_top: function(){
@@ -513,6 +513,14 @@ $(function () {
                     element_scroll.set_css("remove");
                     element_scroll.element.parent().css('padding-top', 0);
                 }
+            });
+
+            $('.sidebar-toggle').on('click', function(){
+                setTimeout(function() {
+                    element_scroll.get_width();
+                    element_scroll.element.css('width', element_scroll.width);
+                    console.log(element_scroll.width);
+                }, 400);
             });
         }
     /* // */    

@@ -14,7 +14,7 @@
 
     @yield('header-scripts')
 </head>
-<body class="skin-admix fixed sidebar-mini---- ">
+<body class="skin-admix m-fixed sidebar-mini">
 <div class="wrapper">
 
     @include('admin.partials.header')
