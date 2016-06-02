@@ -12,13 +12,13 @@
         @include('admin.partials.actions.btn.trash', ['route' => route('admin.users.trash')])
     @endif
     @if($trash)
-        @include('admin.partials.actions.btn.list', ['route' => 'admin.users.index'])
+        @include('admin.partials.actions.btn.list', ['route' => route('admin.users.index')])
     @endif
 @endsection
 
 @section('btn-delete-all')
     @if((!checkRule('admin.users.destroy')) && (!$trash))
-        @include('admin.partials.actions.btn.delete-all', ['route' => 'admin.users.destroy'])
+        @include('admin.partials.actions.btn.delete-all', ['route' => route('admin.users.destroy')])
     @endif
 @endsection
 
@@ -94,10 +94,10 @@
                             @include('admin.partials.actions.btn.edit', ['route' => route('admin.users.edit', $user->id)])
                         @endif
                         @if((!checkRule('admin.users.destroy')) && (!$trash))
-                            @include('admin.partials.actions.btn.delete', ['route' => 'admin.users.destroy', 'id' => $user->id])
+                            @include('admin.partials.actions.btn.delete', ['route' => route('admin.users.destroy'), 'id' => $user->id])
                         @endif
                         @if($trash)
-                            @include('admin.partials.actions.btn.restore', ['route' => 'admin.users.restore', 'id' => $user->id])
+                            @include('admin.partials.actions.btn.restore', ['route' => route('admin.users.restore', $user->id)])
                         @endif
                     </td>
                 </tr>

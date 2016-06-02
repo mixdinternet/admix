@@ -12,13 +12,13 @@
         @include('admin.partials.actions.btn.trash', ['route' => route('admin.roles.trash')])
     @endif
     @if($trash)
-        @include('admin.partials.actions.btn.list', ['route' => 'admin.roles.index'])
+        @include('admin.partials.actions.btn.list', ['route' => route('admin.roles.index')])
     @endif
 @endsection
 
 @section('btn-delete-all')
     @if((!checkRule('admin.roles.destroy')) && (!$trash))
-        @include('admin.partials.actions.btn.delete-all', ['route' => 'admin.roles.destroy'])
+        @include('admin.partials.actions.btn.delete-all', ['route' => route('admin.roles.destroy')])
     @endif
 @endsection
 
@@ -90,10 +90,10 @@
                             @include('admin.partials.actions.btn.edit', ['route' => route('admin.roles.edit', $role->id), 'title' => 'Permissão'])
                         @endif
                         @if((!checkRule('admin.roles.destroy')) && (!$trash))
-                            @include('admin.partials.actions.btn.delete', ['route' => 'admin.roles.destroy', 'id' => $role->id])
+                            @include('admin.partials.actions.btn.delete', ['route' => route('admin.roles.destroy'), 'id' => $role->id])
                         @endif
                         @if($trash)
-                            @include('admin.partials.actions.btn.restore', ['route' => 'admin.roles.restore', 'id' => $role->id])
+                            @include('admin.partials.actions.btn.restore', ['route' => route('admin.roles.restore', $role->id)])
                         @endif
                     </td>
                 </tr>
