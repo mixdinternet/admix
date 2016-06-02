@@ -1,4 +1,4 @@
-{!! Form::open(['route' => [$route, $id]
+{!! Form::open(['url' => $route
     , 'method' => 'post', 'class' => '']) !!}
 <button class="btn btn-warning btn-flat btn-xs" type="submit">
     <i class="fa fa-undo visible-xs-inline-block"></i>
