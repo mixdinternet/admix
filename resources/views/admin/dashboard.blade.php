@@ -78,12 +78,12 @@
                                     datasets: [
                                         {
                                             label: "Visualizações",
-                                            fillColor: "rgba(151,187,205,0.2)",
-                                            strokeColor: "rgba(151,187,205,1)",
-                                            pointColor: "rgba(151,187,205,1)",
+                                            fillColor: "rgba(5,141,199,0.2)",
+                                            strokeColor: "rgba(5,141,199,1)",
+                                            pointColor: "rgba(5,141,199,1)",
                                             pointStrokeColor: "#fff",
                                             pointHighlightFill: "#fff",
-                                            pointHighlightStroke: "rgba(151,187,205,1)",
+                                            pointHighlightStroke: "rgba(5,141,199,1)",
                                             data: [{!! $graph['pageViews'] !!}]
                                         }
                                     ]
@@ -111,12 +111,12 @@
                                     datasets: [
                                         {
                                             label: "Visitas",
-                                            fillColor: "rgba(151,187,205,0.2)",
-                                            strokeColor: "rgba(151,187,205,1)",
-                                            pointColor: "rgba(151,187,205,1)",
+                                            fillColor: "rgba(5,141,199,0.2)",
+                                            strokeColor: "rgba(5,141,199,1)",
+                                            pointColor: "rgba(5,141,199,1)",
                                             pointStrokeColor: "#fff",
                                             pointHighlightFill: "#fff",
-                                            pointHighlightStroke: "rgba(151,187,205,1)",
+                                            pointHighlightStroke: "rgba(5,141,199,1)",
                                             data: [{!! $graph['visitors'] !!}]
                                         }
                                     ]

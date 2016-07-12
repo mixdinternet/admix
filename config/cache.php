@@ -59,6 +59,12 @@ return [
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
+            #'options' => [
+            #    'connections' => [
+            #        'tcp' => 'Predis\Connection\PhpiredisStreamConnection', // PHP streams
+            #        'unix' => 'Predis\Connection\PhpiredisSocketConnection', // ext-socket
+            #    ],
+            #]
         ],
 
     ],

@@ -157,6 +157,7 @@ return [
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         Watson\BootstrapForm\BootstrapFormServiceProvider::class,
+        Spatie\ResponseCache\ResponseCacheServiceProvider::class,
         Caffeinated\Themes\ThemesServiceProvider::class,
         Caffeinated\Flash\FlashServiceProvider::class,
         Pingpong\Menus\MenusServiceProvider::class,
@@ -221,6 +222,7 @@ return [
          * Third Parts Facades
          */
         'LaravelAnalytics' => Spatie\LaravelAnalytics\LaravelAnalyticsFacade::class,
+        'ResponseCache' => Spatie\ResponseCache\ResponseCacheFacade::class,
         'BootForm'  => Watson\BootstrapForm\Facades\BootstrapForm::class,
         'Component' => Caffeinated\Themes\Facades\Component::class,
         'SEO'       => Artesaos\SEOTools\Facades\SEOTools::class,

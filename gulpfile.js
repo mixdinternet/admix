@@ -61,18 +61,22 @@ elixir(function(mix) {
         .scripts([
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/moment/min/moment.min.js',
+            'node_modules/moment/locale/pt-br.js',
             'node_modules/admin-lte/plugins/select2/select2.full.min.js',
             'node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+            'node_modules/bootbox/bootbox.min.js',
+            'node_modules/bootstrap-notify/bootstrap-notify.min.js',
             'node_modules/jquery-validation/dist/jquery.validate.js',
             'node_modules/jquery-validation/dist/additional-methods.js',
             'node_modules/jquery-validation/dist/localization/messages_pt_BR.js',
             'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
             'node_modules/jquery-maskmoney/dist/jquery.maskMoney.min.js',
             'node_modules/slick-carousel/slick/slick.min.js',
-            'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',
             'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
             //'node_modules/slicknav/dist/jquery.slicknav.min.js',
-            'resources/assets/js/frontend.js'
+            'resources/assets/js/frontend.js',
+            'resources/assets/js/callback-infos.js'
         ],
         'public/assets/js/frontend.js',
         './')
@@ -115,7 +119,7 @@ elixir(function(mix) {
             'node_modules/moment/locale/pt-br.js',
             'node_modules/bootstrap-fileinput/js/plugins/canvas-to-blob.min.js',
             'node_modules/bootstrap-fileinput/js/fileinput.min.js',
-            'node_modules/bootstrap-fileinput/js/fileinput_locale_pt-BR.js',
+            'node_modules/bootstrap-fileinput/js/locales/pt-BR.js',
             'node_modules/bootstrap/dist/js/bootstrap.min.js',
             'node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
             'node_modules/jquery-validation/dist/jquery.validate.js',

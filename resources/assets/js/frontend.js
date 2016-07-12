@@ -193,10 +193,4 @@ $(window).load(function () {
     /* -- // -- */
     /* ------------- INICIANDO SLIDER HOME -------------- */
 
-
-    /* ------------- INICIANDO SELECT -------------- */
-    $('.selectpicker').selectpicker();
-    /* ------------- INICIANDO SELECT -------------- */
-
-
 });

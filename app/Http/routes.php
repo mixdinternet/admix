@@ -12,8 +12,13 @@
 */
 
 Route::get('/', 'FrontendController@welcome');
-Route::get('robots.txt', 'RobotsController@index');
-Route::get('deploy', 'DeployController@index');
+
+Route::group(['middleware' => 'doNotCacheResponse'], function () {
+    Route::get('robots.txt', 'RobotsController@index');
+    Route::get('deploy', 'DeployController@index');
+    Route::get('info', 'FrontendController@info');
+    Route::get('opre', 'FrontendController@opre');
+});
 
 Route::group(['prefix' => config('admin.url')], function () {
 

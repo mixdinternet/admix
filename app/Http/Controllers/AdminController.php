@@ -18,6 +18,8 @@ class AdminController extends AuthController
         $this->redirectTo = route('admin.dashboard');
         $this->redirectPath = route('admin.dashboard');
         $this->redirectAfterLogout = route('admin.dashboard');
+
+        $this->middleware('doNotCacheResponse');
     }
 
     public function loginView ()

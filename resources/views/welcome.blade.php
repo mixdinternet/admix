@@ -4,6 +4,7 @@
         <title>Laravel</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link href="/assets/css/frontend.css" rel="stylesheet" type="text/css">
 
         <style>
             html, body {
@@ -41,5 +42,10 @@
                 <div class="title">Laravel 5</div>
             </div>
         </div>
+
+        <script src="/assets/js/frontend.js"></script>
+
+        @include('flash::message')
+
     </body>
 </html>

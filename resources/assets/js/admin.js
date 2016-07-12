@@ -126,8 +126,8 @@ $(function () {
                     $(element).removeClass(errorClass).addClass(validClass).parent().parent().addClass('has-success').removeClass('has-error').find('span.help-block').hide();
                 }
             },
-            submitHandler: function() {
-                $('#' + id + ' input[type=submit]').prop('disabled','true').css('opacity','.7');
+            submitHandler: function () {
+                $('#' + id + ' input[type=submit]').prop('disabled', 'true').css('opacity', '.7');
                 return true
             }
         });
@@ -176,7 +176,7 @@ $(function () {
         previewCacheFile = file;
     }).on('fileimageloaded', function (event, previewId) {
 
-        if(previewhasError == true) {
+        if (previewhasError == true) {
             $('#' + event.target.id).attr('disabled', 'disabled');
             return false;
         }
@@ -229,7 +229,7 @@ $(function () {
                 onChange: updateCoords,
                 onSelect: updateCoords,
                 setSelect: [0, target.prop("naturalWidth"), target.prop("naturalHeight"), 0],
-                onRelease : releaseCheck
+                onRelease: releaseCheck
             });
         }
 
@@ -283,7 +283,7 @@ $(function () {
         previewhasError = false;
         $(_this).attr('disabled', false);
         $(_this).parents('form').append('<input type="hidden" name="remove[]" value="' + input + '">');
-    }).on('fileuploaderror', function(event, data, msg) {
+    }).on('fileuploaderror', function (event, data, msg) {
         previewhasError = true;
     });
 
@@ -393,7 +393,7 @@ $(function () {
         scaleShowHorizontalLines: true,
         scaleShowVerticalLines: true,
         bezierCurve: true,
-        bezierCurveTension: 0.3,
+        bezierCurveTension: 0.2,
         pointDot: true,
         pointDotRadius: 4,
         pointDotStrokeWidth: 1,
@@ -407,7 +407,7 @@ $(function () {
         multiTooltipTemplate: "<%if (datasetLabel){%><%=datasetLabel%>: <%}%><%= value %>",
     };
 
-    $('.jq-line-chart').each(function(){
+    $('.jq-line-chart').each(function () {
         var ctx = $("#" + $(this).attr('id')).get(0).getContext("2d");
         new Chart(ctx).Line(eval($(this).attr('id') + 'Data'), lineChartOptions);
     });
@@ -422,7 +422,7 @@ $(function () {
         ],
         lang: "pt-BR",
         callbacks: {
-            onImageUpload: function(files) {
+            onImageUpload: function (files) {
                 var file = files[0];
                 var that = $(this);
                 var data = new FormData();
@@ -435,11 +435,11 @@ $(function () {
                     cache: false,
                     contentType: false,
                     processData: false,
-                    success: function(url) {
+                    success: function (url) {
                         var image = $('<img>').attr('src', url);
                         that.summernote("insertNode", image[0]);
                     },
-                    error: function(data) {
+                    error: function (data) {
                         console.log(data);
                     }
                 });
@@ -449,79 +449,79 @@ $(function () {
     });
 
     /* Box Fixed */
-        if($('html').find('.jq-box-fixed').size() > 0){
-            var element_config = {
-                element: $('.jq-box-fixed'),
-                space: $('.navbar-static-top').outerHeight(),
-                top: '',
-                width: '',
-                height: '',
-                css_initial: function(){
-                    return {
-                        position: 'relative',
-                        top: 0
-                    }
-                },
-                css_fixed: function(){
-                    return {
-                        position: 'fixed',
-                        top: element_config.space,
-                        width: element_config.width,
-                        'z-index': 800,
-                        'background-color': '#FFF',
-                    }
-                },
-
-
-                get_height: function(){
-                    element_config.height = element_config.element.outerHeight();
-                },
-
-                get_width: function(){
-                    element_config.width = element_config.element.parent().outerWidth();
-                },
-
-                get_top: function(){
-                    element_config.top = element_config.element.offset().top - element_config.space;
-                },
-
-                set_css: function(status){
-                    if(status == "add"){
-                        element_config.element.css(element_config.css_fixed());
-                    }
-
-                    if(status == "remove"){
-                        element_config.element.css(element_config.css_initial());
-                    }
-                },
-
-                init: function(){
-                    element_config.get_top();
-                    element_config.get_width();
-                    element_config.get_height();
+    if ($('html').find('.jq-box-fixed').size() > 0) {
+        var element_config = {
+            element: $('.jq-box-fixed'),
+            space: $('.navbar-static-top').outerHeight(),
+            top: '',
+            width: '',
+            height: '',
+            css_initial: function () {
+                return {
+                    position: 'relative',
+                    top: 0
                 }
-            };
-
-
-            var element_scroll = element_config;
-            element_scroll.init();
-            $(window).on('scroll', function(){
-                if($(window).scrollTop() >= element_scroll.top){
-                    element_scroll.set_css("add");
-                    element_scroll.element.parent().css('padding-top', element_scroll.height);
-                }else{
-                    element_scroll.set_css("remove");
-                    element_scroll.element.parent().css('padding-top', 0);
+            },
+            css_fixed: function () {
+                return {
+                    position: 'fixed',
+                    top: element_config.space,
+                    width: element_config.width,
+                    'z-index': 800,
+                    'background-color': '#FFF',
                 }
-            });
+            },
 
-            $('.sidebar-toggle').on('click', function(){
-                setTimeout(function() {
-                    element_scroll.get_width();
-                    element_scroll.element.css('width', element_scroll.width);
-                    console.log(element_scroll.width);
-                }, 400);
-            });
-        }
-    /* // */    
+
+            get_height: function () {
+                element_config.height = element_config.element.outerHeight();
+            },
+
+            get_width: function () {
+                element_config.width = element_config.element.parent().outerWidth();
+            },
+
+            get_top: function () {
+                element_config.top = element_config.element.offset().top - element_config.space;
+            },
+
+            set_css: function (status) {
+                if (status == "add") {
+                    element_config.element.css(element_config.css_fixed());
+                }
+
+                if (status == "remove") {
+                    element_config.element.css(element_config.css_initial());
+                }
+            },
+
+            init: function () {
+                element_config.get_top();
+                element_config.get_width();
+                element_config.get_height();
+            }
+        };
+
+
+        var element_scroll = element_config;
+        element_scroll.init();
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop() >= element_scroll.top) {
+                element_scroll.set_css("add");
+                element_scroll.element.parent().css('padding-top', element_scroll.height);
+            } else {
+                element_scroll.set_css("remove");
+                element_scroll.element.parent().css('padding-top', 0);
+            }
+        });
+
+        $('.sidebar-toggle').on('click', function () {
+            setTimeout(function () {
+                element_scroll.get_width();
+                element_scroll.element.css('width', element_scroll.width);
+                console.log(element_scroll.width);
+            }, 400);
+        });
+    }
+    /* // */
 });
