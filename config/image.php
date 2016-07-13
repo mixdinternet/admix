@@ -154,7 +154,7 @@ return array(
     | as the original image, you can override this path here
     |
     */
-    'write_path' => 'cache/img',
+    'write_path' => 'cache',
 
     /*
     |--------------------------------------------------------------------------

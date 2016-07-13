@@ -2,6 +2,7 @@
 /node_modules
 /nbproject
 /public/media/*
+/public/cache/*
 /storage/database.sqlite
 /storage/cache/*
 /stats
