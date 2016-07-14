@@ -11,13 +11,6 @@ class FrontendController extends Controller
         return view("welcome");
     }
 
-    public function opre()
-    {
-        Flash::success('Item inserido com sucesso.');
-
-        return redirect('/');
-    }
-
     public function info()
     {
         #-- overkill --
