@@ -19,6 +19,7 @@
     "dropzone": "^4.3.0",
     "eonasdan-bootstrap-datetimepicker": "^4.15.35",
     "font-awesome": "^4.5.0",
+    "foundation-sites": "^6.2.3",
     "ionicons": "^2.0.1",
     "jquery": "^2.0.0",
     "jquery-chained": "^1.0.0",

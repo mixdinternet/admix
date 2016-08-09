@@ -1,17 +1,41 @@
-.row, .container, .container-fluid{
+.container{
 	display: block;
 	width: 100%;
+	max-width: 1170px;
 	margin: 0 auto;
-	padding: 0;
 }
 
 .row{
-	float: left;
+	max-width: 100%;
 }
 
-.container{
-	max-width: 1400px;
-	margin: 0 auto;
+.foundation-grid{
+	display: block;
+	width: auto;
+	margin: 0 -15px;
+	padding: 0;
+	list-style: none;
+}
+
+.foundation-grid > .column{
+	margin: 15px 0;
+}
+
+@media(max-width: 1200px){
+	.container{
+		padding: 0 15px;
+	}
+}
+
+@media(max-width: 640px){
+	.foundation-grid{
+		margin: 0 auto;
+	}
+
+	.foundation-grid > .column{
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .vertical-align{
@@ -50,139 +74,4 @@
 		border-#{$position}-right-radius: nth($deg, 2);
 	}
 
-}
-
-/* ANIMAÇÃO ----------------------------------------------------------------------- 
-   
-   Chamando o mixin dentro da class:
-   ---------------------------------
-   @include animacao($nome, $atributo, $valores:(), $duracao, $estilo, $delay, $interacoes, $direcao);
-
-   Exemplo: @include animacao(animacaoTest, background-color, ('black', 'white', 'green', 'blue', 'red'), 3s, ease-in-out, 0s, infinite, alternate);
-
-   OBS: É obrigado atribuir um valor para os 3 primeiros parâmetros, os demais tem um valor padrão.	
-
-
-   Parâmetros:
-   -----------
-   $nome = Nome da animação
-   $atributo = o atributo que irá ser animado
-   $valores:() = Valor de cada etapa da sua animação (ARRAY DE VALORES);
-   $duracao = tempo que a animação irá durar (
-		2s: O tempo total de animação é de 2 segundo (PADRÃO);
-   )
-   $estilo = forma da movimentação da animação (
-   		ease = Suave (PADRÃO)
-   		ease-in: Começa suave;
-   		ease-in-out: Começa e termina suave;
-   		linear: Velocidade constante;
-   )
-   $delay = tempo de espera para iniciar a animação (
-		0s: 0 segundos, inicia instantaneo (PADRÃO) ;
-   )
-   $interacoes = Quantidade de repetições da animação (
-		1: Executa uma única vez (PADRÃO)
-		infinite: Executa infinitas vezes 
-   )
-   $direcao = Sentido da animação (
-		inherit: Do início ao fim (PADRÃO)
-		reverse: Do fim ao início
-		alternate: Escolha aleatória e pode alterar o sentido no meio da execução
-   ) 
-*/
-
-@mixin animacao($nome, $atributo, $valores:(), $duracao: 2s, $estilo: ease, $delay: 0s, $interacoes: 1, $direcao: inherit){
-			
-	$numero_elementos: length($valores) - 1; /* Pegando a quantidade de elementos menos 1 */
-	$valor: 100% / $numero_elementos; /* Dividindo o valor entre os elementos */
-	$first: true; /* Status do primeiro elemento */
-	$i: 1; /* Contador */
-
-	/* Se a quantidade de valores no array for maior que 0, inicia o processo */
-	@if $numero_elementos > 0{
-
-		/*  ----- Montando os key frames ----- */
-			@keyframes #{$nome} {
-				@while $i <= $numero_elementos{
-					@if $i == 1 and $first{
-				    	0% {#{$atributo}: nth($valores, $i);}
-				    	$first: false;
-					}
-					@else{
-				    	#{$valor * $i} {#{$atributo}: nth($valores, $i+1);}
-				    	$i: $i + 1;
-					}
-				}
-			} 
-
-		/* ----- Iniciando os atributos fornecidos ou padrões ----- */
-			animation-name: $nome;
-		    animation-duration: $duracao;
-		    animation-timing-function: $estilo;
-		    animation-delay: $delay;
-		    animation-iteration-count: $interacoes;
-		    animation-direction: $direcao;
-		    animation-fill-mode: forwards;
-	}
-}
-
-/* FIM --------------------------------------------------------------------------------
-
-
-
-
-/* Small Desktop */
-@media(max-width: 1430px){
-	.container, .container-fluid{
-		max-width: 1170px;
-	}
-}
-
-
-/* Small Notebook */
-@media(max-width: 1200px){
-	.container, .container-fluid{
-		max-width: 1200px;
-		padding: 0 15px;
-	}
-}
-
-
-/* Tablet e Ipad Landscape */
-@media(max-width: 1024px){
-}
-
-
-
-
-/* Tablet e Ipad Portrait */
-@media(max-width: 768px){	
-}
-
-
-
-
-/* Iphone 6 (Landscape) */
-@media(max-width: 568px){
-}
-
-
-
-
-/* Iphone 3, 4 e 5 (Landscape) */
-@media(max-width: 480px){
-}
-
-
-
-
-/* Iphone 6 Portrait */
-@media(max-width: 380px){
-}
-
-
-
-
-/* Iphone 3, 4 e 5 (Portrait) */
-@media(max-width: 320px){
 }

@@ -4,7 +4,7 @@ $.extend($.validator.messages, {
     required: "Este campo &eacute; obrigatório."
 });
 
-$(window).load(function () {
+$(document).ready(function () {
 
     $('.mask-phone').focusout(function () {
         var phone, element;
@@ -136,61 +136,4 @@ $(window).load(function () {
     });
 
     $('.jq-select2').width('100%').select2();
-
-    /* ------------- INICIANDO SLIDER HOME -------------- */
-    $('.slider-home-full-banner').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        autoplay: false,
-        fade: true,
-        autoplaySpeed: 3000,
-        speed: 1000,
-        touchThreshold: 15,
-        responsive: [
-            {
-                breakpoint: 900,
-                settings: {
-                    slidesToShow: 3,
-                }
-            },
-            {
-                breakpoint: 700,
-                settings: {
-                    slidesToShow: 2,
-                }
-            },
-            {
-                breakpoint: 479,
-                settings: {
-                    slidesToShow: 1,
-                }
-            }
-        ]
-    });
-
-    /* Controllers */
-    $('header.home .slider-controllers .btn-prev').on('click', function () {
-        $('header.home .slider-home-full-banner').slick('slickPrev'); // Passando para o index anterior.
-    });
-
-    $('header.home .slider-controllers .btn-next').on('click', function () {
-        $('header.home .slider-home-full-banner').slick('slickNext'); // Passando para o index seguinte.
-    });
-
-    $('header.home .slider-controllers .btn-position').on('click', function () {
-        var position = ($(this).data('position') - 1); // Pega a posição atual e subtrai 1, pois o index começa com 0 (0, 1, 2, etc..).
-        $('header.home .slider-home-full-banner').slick('slickGoTo', position); // Navega o slider até o index selecionado.
-    });
-
-    // Ouvinte para observar se o slider mudou o index atual, caso sim.. Ajusta o active no botão do controller
-    $('header.home .slider-home-full-banner').on('afterChange', function () {
-        var index = $('header.home .slider-home-full-banner .index.slick-active').data('slick-index') + 1; // Pegando o valor do index e somando com + 1, pois o slider inicia com index 0 e o controler com index 1.
-        $('header.home .slider-controllers .btn-position').removeClass('active'); // Remove a class active de todos os index do controller.
-        $('header.home .slider-controllers .btn-position[data-position=' + index + ']').addClass('active'); // Adiciona a class active no index do controller.
-    });
-    /* -- // -- */
-    /* ------------- INICIANDO SLIDER HOME -------------- */
-
 });
