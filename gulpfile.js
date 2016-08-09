@@ -46,9 +46,9 @@ elixir(function(mix) {
 
 
         .styles([
-            'node_modules/admin-lte/plugins/select2/select2.min.css',
             'node_modules/slick-carousel/slick/slick.css',
-            'node_modules/magnific-popup/dist/magnific-popup.css',
+            'node_modules/bootstrap/dist/css/bootstrap.min.css',
+            'node_modules/ui-select/dist/select.min.css',
             'resources/assets/css/frontend.css'
         ],
         'public/assets/css/frontend.css',
@@ -57,28 +57,18 @@ elixir(function(mix) {
 
         .scripts([
             'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/moment/min/moment.min.js',
-            'node_modules/moment/locale/pt-br.js',
-            'node_modules/admin-lte/plugins/select2/select2.full.min.js',
-            'node_modules/bootbox/bootbox.min.js',
-            'node_modules/jquery-validation/dist/jquery.validate.js',
-            'node_modules/jquery-validation/dist/additional-methods.js',
-            'node_modules/jquery-validation/dist/localization/messages_pt_BR.js',
-            'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
-            'node_modules/jquery-maskmoney/dist/jquery.maskMoney.min.js',
             'node_modules/slick-carousel/slick/slick.min.js',
-            'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
             'resources/assets/js/frontend.js',
-            'resources/assets/js/callback-infos.js'
-        ],
-        'public/assets/js/frontend.js',
-        './')
 
 
-        /* Angular Files */
-        .scripts([
             'node_modules/angular/angular.min.js',
             'node_modules/angular-route/angular-route.min.js',
+            'node_modules/angular-utils-pagination/dirPagination.js',
+            'node_modules/angular-slick-carousel/dist/angular-slick.min.js',
+            'node_modules/ui-select/dist/select.min.js',
+            'node_modules/angular-sanitize/angular-sanitize.min.js',
+
+
             'resources/assets/angular/modules/.',
             'resources/assets/angular/config/.',
             'resources/assets/angular/controllers/.',
@@ -88,7 +78,6 @@ elixir(function(mix) {
         ],
         'public/assets/js/frontend.js',
         './')
-
         /* ---------------------------------------- */
 
         /*

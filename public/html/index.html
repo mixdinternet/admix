@@ -24,20 +24,40 @@
 
 	<body ng-controller="controller_app">
 
-
+		<!-- Include Header -->
 		<div ng-include="'partials/header.html'"></div>
 
 		<main>
+			<!-- Include Views -->
 			<!--<div ng-view=""></div>-->
+
 			<div class="container">
 				<div class="row align-center">
-					<div class="column medium-2 text-center">
-						{{message}}
+					<div class="column medium-10 text-center">
+
+					<!-- Slider Exemplo -->
+					<slick settings="slickConfig" slides-to-show="1" slides-to-scroll="1">
+				    	<div class="item"><span>{{message}}</span></div>
+				    	<div class="item"><span>{{message}}</span></div>
+				    </slick>
+
+					<!-- Select2 Exemplo -->
+					<ui-select ng-model="selected.value" theme="bootstrap">
+					    <ui-select-match>
+					        <span ng-bind="$select.selected.name"></span>
+					    </ui-select-match>
+					    <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+					        <span ng-bind="item.name"></span>
+					    </ui-select-choices>
+					</ui-select>
+						
 					</div>
 				</div>
 			</div>
+			
 		</main>
 
+		<!-- Include Footer -->
 		<div ng-include="'partials/footer.html'"></div>
 
 		<!-- MIXD -->
