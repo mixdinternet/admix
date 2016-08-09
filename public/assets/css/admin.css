@@ -8533,10 +8533,6 @@ button.close {
   width: 100%;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
-  list-style: none;
-}
-
 .select2-container--default .select2-selection--multiple .select2-selection__placeholder {
   color: #999;
   margin-top: 5px;
@@ -8591,7 +8587,7 @@ button.close {
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-  border: solid black 1px;
+  border: solid #000 1px;
   outline: 0;
 }
 
@@ -9570,7 +9566,7 @@ body.hold-transition .right-side,
 body.hold-transition .main-footer,
 body.hold-transition .main-sidebar,
 body.hold-transition .left-side,
-body.hold-transition .main-header .navbar,
+body.hold-transition .main-header > .navbar,
 body.hold-transition .main-header .logo {
   /* Fix for IE */
   transition: none;
@@ -9642,7 +9638,7 @@ a:focus {
   z-index: 1030;
 }
 
-.main-header .navbar {
+.main-header > .navbar {
   transition: margin-left 0.3s ease-in-out;
   margin-bottom: 0;
   margin-left: 230px;
@@ -9651,7 +9647,7 @@ a:focus {
   border-radius: 0;
 }
 
-.layout-top-nav .main-header .navbar {
+.layout-top-nav .main-header > .navbar {
   margin-left: 0;
 }
 
@@ -10020,11 +10016,8 @@ a:focus {
 
 .sidebar-menu > li .label,
 .sidebar-menu > li .badge {
-  margin-right: 5px;
-}
-
-.sidebar-menu > li .badge {
   margin-top: 3px;
+  margin-right: 5px;
 }
 
 .sidebar-menu li.header {
@@ -10032,14 +10025,15 @@ a:focus {
   font-size: 12px;
 }
 
-.sidebar-menu li > a > .pull-right-container > .fa-angle-left {
+.sidebar-menu li > a > .fa-angle-left {
   width: auto;
   height: auto;
   padding: 0;
   margin-right: 10px;
+  margin-top: 3px;
 }
 
-.sidebar-menu li.active > a > .pull-right-container > .fa-angle-left {
+.sidebar-menu li.active > a > .fa-angle-left {
   transform: rotate(-90deg);
 }
 
@@ -10075,7 +10069,7 @@ a:focus {
   width: 20px;
 }
 
-.sidebar-menu .treeview-menu > li > a > .pull-right-container > .fa-angle-left,
+.sidebar-menu .treeview-menu > li > a > .fa-angle-left,
 .sidebar-menu .treeview-menu > li > a > .fa-angle-down {
   width: auto;
 }
@@ -10135,17 +10129,6 @@ a:focus {
     background-color: inherit;
   }
 
-  .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > .pull-right-container {
-    float: right;
-    width: auto!important;
-    left: 200px!important;
-    top: 10px!important;
-  }
-
-  .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > .pull-right-container > .label:not(:first-of-type) {
-    display: none;
-  }
-
   .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
     top: 44px;
     margin-left: 0;
@@ -10202,7 +10185,7 @@ a:focus {
   position: relative;
 }
 
-.sidebar-menu li > a > .pull-right-container {
+.sidebar-menu li > a > .pull-right {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -16086,6 +16069,7 @@ fieldset[disabled] .btn-yahoo.active {
   background-color: #374850;
   border: 1px solid transparent;
   height: 35px;
+  transition: all 0.3s ease-in-out;
 }
 
 .skin-admix .sidebar-form input[type="text"] {
@@ -26444,7 +26428,7 @@ input[type="radio"] .styled:checked + label::after {
   animation-name: slideOutUp;
 }
 /*!
- * bootstrap-fileinput v4.3.3
+ * bootstrap-fileinput v4.3.4
  * http://plugins.krajee.com/file-input
  *
  * Author: Kartik Visweswaran

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="module_app">
 	<head>
 		<meta charset="utf-8">
+
+		<!-- SITE URL BASE FOR REMOVE HASHTAG -->
+<!--		<base href=""> -->
+
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-		<title>Assinatura - Diário da Região</title>
+		<title>Starter</title>
 
 		<!-- MIXD -->
 		<link rel="stylesheet" href="../assets/css/frontend.css">
@@ -18,26 +22,20 @@
 		<![endif]-->
 	</head>
 
-	<body>
+	<body ng-controller="controller_app">
 
-		<header>
-		</header>
-	
+
+		<div ng-include="'partials/header.html'"></div>
+
 		<main>
-			<article class="home">
-
-				<p>Suas escolhas fazem a diferença</p>
-
-			</article>
+			<!--<div ng-view=""></div>-->
+			{{message}}
 		</main>
 
-		<footer>
-		</footer>
-		
+		<div ng-include="'partials/footer.html'"></div>
 
 		<!-- MIXD -->
 		<script src="../assets/js/frontend.js"></script>
-
 		
 	</body>
 </html>

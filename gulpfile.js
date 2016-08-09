@@ -44,6 +44,7 @@ elixir(function(mix) {
             'includes.scss'
         ], 'resources/assets/css/frontend.css')
 
+
         .styles([
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/admin-lte/plugins/select2/select2.min.css',
@@ -57,6 +58,7 @@ elixir(function(mix) {
         ],
         'public/assets/css/frontend.css',
         './')
+
 
         .scripts([
             'node_modules/jquery/dist/jquery.min.js',
@@ -77,6 +79,21 @@ elixir(function(mix) {
             //'node_modules/slicknav/dist/jquery.slicknav.min.js',
             'resources/assets/js/frontend.js',
             'resources/assets/js/callback-infos.js'
+        ],
+        'public/assets/js/frontend.js',
+        './')
+
+
+        /* Angular Files */
+        .scripts([
+            'node_modules/angular/angular.min.js',
+            'node_modules/angular-route/angular-route.min.js',
+            'resources/assets/angular/modules/.',
+            'resources/assets/angular/config/.',
+            'resources/assets/angular/controllers/.',
+            'resources/assets/angular/factory/.',
+            'resources/assets/angular/services/.',
+            'resources/assets/angular/directives/.'
         ],
         'public/assets/js/frontend.js',
         './')

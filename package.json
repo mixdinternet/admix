@@ -5,6 +5,8 @@
   },
   "dependencies": {
     "admin-lte": "^2.3.2",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
     "animate.css": "^3.4.0",
     "awesome-bootstrap-checkbox": "^0.3.6",
     "blueimp-load-image": "^2.1.0",

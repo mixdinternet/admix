@@ -8533,10 +8533,6 @@ button.close {
   width: 100%;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
-  list-style: none;
-}
-
 .select2-container--default .select2-selection--multiple .select2-selection__placeholder {
   color: #999;
   margin-top: 5px;
@@ -8591,7 +8587,7 @@ button.close {
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-  border: solid black 1px;
+  border: solid #000 1px;
   outline: 0;
 }
 
