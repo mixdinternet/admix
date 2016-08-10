@@ -2,10 +2,6 @@
 <html lang="pt-br" ng-app="module_app">
 	<head>
 		<meta charset="utf-8">
-
-		<!-- SITE URL BASE FOR REMOVE HASHTAG -->
-<!--		<base href=""> -->
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
@@ -24,44 +20,16 @@
 
 	<body ng-controller="controller_app">
 
-		<!-- Include Header -->
-		<div ng-include="'partials/header.html'"></div>
+		<!-- INCLUDES -->
+			<div ng-include="'partials/header.html'"></div>
+			<main>
+				<div ng-view=""></div>
+			</main>
+			<div ng-include="'partials/footer.html'"></div>
+		<!-- // -->
 
-		<main>
-			<!-- Include Views -->
-			<!--<div ng-view=""></div>-->
-
-			<div class="container">
-				<div class="row align-center">
-					<div class="column medium-10 text-center">
-
-					<!-- Slider Exemplo -->
-					<slick settings="slickConfig" slides-to-show="1" slides-to-scroll="1">
-				    	<div class="item"><span>{{message}}</span></div>
-				    	<div class="item"><span>{{message}}</span></div>
-				    </slick>
-
-					<!-- Select2 Exemplo -->
-					<ui-select ng-model="selected.value" theme="bootstrap">
-					    <ui-select-match>
-					        <span ng-bind="$select.selected.name"></span>
-					    </ui-select-match>
-					    <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
-					        <span ng-bind="item.name"></span>
-					    </ui-select-choices>
-					</ui-select>
-						
-					</div>
-				</div>
-			</div>
-			
-		</main>
-
-		<!-- Include Footer -->
-		<div ng-include="'partials/footer.html'"></div>
 
 		<!-- MIXD -->
 		<script src="../assets/js/frontend.js"></script>
-		
 	</body>
 </html>

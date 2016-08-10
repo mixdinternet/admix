@@ -1,5 +1,41 @@
 <article class="home">
+	<div class="container">
+		<div class="row align-center">
+			<div class="column medium-10 text-center">
 
-	<h1>Home</h1>
+			<br><br>
 
+			<h1>{{message}}</h1>
+			
+			<br><br>
+
+			<!-- Slider Exemplo -->
+			<slick settings="slickConfig" slides-to-show="1" slides-to-scroll="1">
+		    	<div class="item"><h2>Slick Slider</h2></div>
+		    	<div class="item"><h2>Slick Slider</h2></div>
+		    </slick>
+
+		    <hr>
+		    <br><br>
+
+			<!-- Select2 Exemplo -->
+			<h2>Select 2</h2>
+			<ui-select ng-model="selected.value" theme="bootstrap">
+			    <ui-select-match>
+			        <span>{{$select.selected.name}}</span>
+			    </ui-select-match>
+			    <ui-select-choices repeat="item in (itemArray | filter: $select.search)">
+			        <span>{{item.name}}</span>
+			    </ui-select-choices>
+			</ui-select>
+			<br>
+			<p>Valor Selecionado: {{selected.value}}</p>
+			<br>
+				
+		    <hr>
+		    <br><br>
+
+			</div>
+		</div>
+	</div>
 </article>

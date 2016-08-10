@@ -62,19 +62,19 @@ elixir(function(mix) {
 
 
             'node_modules/angular/angular.min.js',
-            'node_modules/angular-route/angular-route.min.js',
             'node_modules/angular-utils-pagination/dirPagination.js',
             'node_modules/angular-slick-carousel/dist/angular-slick.min.js',
             'node_modules/ui-select/dist/select.min.js',
             'node_modules/angular-sanitize/angular-sanitize.min.js',
+            'node_modules/angular-route/angular-route.min.js',
 
 
             'resources/assets/angular/modules/.',
             'resources/assets/angular/config/.',
-            'resources/assets/angular/controllers/.',
             'resources/assets/angular/factory/.',
             'resources/assets/angular/services/.',
-            'resources/assets/angular/directives/.'
+            'resources/assets/angular/directives/.',
+            'resources/assets/angular/controllers/.'
         ],
         'public/assets/js/frontend.js',
         './')
