@@ -21,6 +21,7 @@ Dentre os itens utilizados neste pacote podemos destacar:
   * [Paginação](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
   * [Select2](http://angular-ui.github.io/ui-select)
   * [Slick Carousel](https://www.npmjs.com/package/angular-slick-carousel)
+  * [Input Masks - PT_BR](https://github.com/assisrafael/angular-input-masks)
 
 ## Pré Requisitos
 [Homestead](https://laravel.com/docs/5.1/homestead) funcionando corretamente na máquina
