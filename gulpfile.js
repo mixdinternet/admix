@@ -67,6 +67,7 @@ elixir(function(mix) {
             'node_modules/ui-select/dist/select.min.js',
             'node_modules/angular-sanitize/angular-sanitize.min.js',
             'node_modules/angular-route/angular-route.min.js',
+            'node_modules/angular-input-masks/releases/angular-input-masks-standalone.min.js',
 
 
             'resources/assets/angular/modules/.',
