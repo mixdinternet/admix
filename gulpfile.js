@@ -62,6 +62,8 @@ elixir(function(mix) {
 
 
             'node_modules/angular/angular.min.js',
+            'node_modules/angular-animate/angular-animate.min.js',
+            'node_modules/angular-foundation-6/dist/angular-foundation.min.js',
             'node_modules/angular-utils-pagination/dirPagination.js',
             'node_modules/angular-slick-carousel/dist/angular-slick.min.js',
             'node_modules/ui-select/dist/select.min.js',

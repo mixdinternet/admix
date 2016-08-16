@@ -6,6 +6,8 @@
   "dependencies": {
     "admin-lte": "^2.3.2",
     "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-foundation-6": "^0.10.7",
     "angular-input-masks": "^2.4.0",
     "angular-route": "^1.5.8",
     "angular-sanitize": "^1.5.8",
