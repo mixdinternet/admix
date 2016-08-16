@@ -1,6 +1,6 @@
 /* 
 	Criando o módulo e injetando os componentes:
-	- Rotas
+	- Rotas: https://www.npmjs.com/package/angular-route
 	- Slick Slider: https://www.npmjs.com/package/angular-slick-carousel
 	- Select 2: http://angular-ui.github.io/ui-select
 	- Paginação: https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination
