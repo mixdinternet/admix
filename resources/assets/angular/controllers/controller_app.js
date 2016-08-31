@@ -1,4 +1,4 @@
-angular.module("module_app").controller("controller_app", function($scope, $modal, $log){
+angular.module("module_app").controller("controller_app", function(factory_app, provider_app ,$scope, $modal, $log){
 
 	$scope.message = "Hello World!!!";
 
@@ -44,4 +44,5 @@ angular.module("module_app").controller("controller_app", function($scope, $moda
 
         };
     // -- // --
+
 });

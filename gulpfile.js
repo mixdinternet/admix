@@ -76,8 +76,9 @@ elixir(function(mix) {
             'resources/assets/angular/config/.',
             'resources/assets/angular/factory/.',
             'resources/assets/angular/services/.',
-            'resources/assets/angular/directives/.',
-            'resources/assets/angular/controllers/.'
+            'resources/assets/angular/providers/.',
+            'resources/assets/angular/controllers/.',
+            'resources/assets/angular/directives/.'
         ],
         'public/assets/js/frontend.js',
         './')
