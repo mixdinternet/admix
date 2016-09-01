@@ -1,4 +1,4 @@
-angular.module("module_app").controller("controller_app", function(service_app, $scope, $modal, $log){
+angular.module("module_app").controller("controller_app", function(service_app, factory_app, $scope, $modal, $log){
 
 
 	$scope.message = "Hello World!!!";
@@ -46,20 +46,9 @@ angular.module("module_app").controller("controller_app", function(service_app, 
         };
     // -- // --
 
-    // Testando o Bean 
-        var app_1 = new BeanApp();
-        app_1.id = 1;
-        app_1.nome = "Mixd";
-        app_1.nivel = "Expert";
 
-        var app_2 = new BeanApp();
-        app_2.id = 2;
-        app_2.nome = "House";
-        app_2.nivel = "Medium";
+    var item1 = service_app.list_app();
 
-        $scope.apps = new Array();
-        $scope.apps.push(app_1);
-        $scope.apps.push(app_2);
-    // -- // --
+    $log.log(item1);
 
 });
