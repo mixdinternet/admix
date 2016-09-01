@@ -74,9 +74,8 @@ elixir(function(mix) {
 
             'resources/assets/angular/modules/.',
             'resources/assets/angular/config/.',
-            'resources/assets/angular/factory/.',
+            'resources/assets/angular/beans/.',
             'resources/assets/angular/services/.',
-            'resources/assets/angular/providers/.',
             'resources/assets/angular/controllers/.',
             'resources/assets/angular/directives/.'
         ],

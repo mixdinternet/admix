@@ -1,5 +1,5 @@
-angular.module("module_app").service("service_app", function(factory_app, $log){
+angular.module("module_app").service("service_app", function($log){
 
-$log.log(1);
+
 
 });

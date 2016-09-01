@@ -1,7 +1,7 @@
-angular.module("module_app").factory("factory_app", function($log){
+function BeanApp(){
 
 	// Criando o Objeto
-	var factoryApp = {
+	var obj = {
 
 		// Iniciando as variáveis do objeto
 			id : "",
@@ -35,10 +35,6 @@ angular.module("module_app").factory("factory_app", function($log){
 
 
 	// Retorna o objeto para o injetor
-		return {
-			NEW_factoryApp: function(){
-				return factoryApp;
-			}
-		};
+		return obj;
 
-});
+};
