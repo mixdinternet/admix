@@ -1,40 +1,22 @@
 angular.module("module_app").controller("controller_app", function(Service_app, Factory_app, $scope, $modal, $log){
 
-    // Atualiza a table
-    function refresh_table(){
-        
-        // Definindo o intervalo de tempo da atualização em segundos
-        var time = 2.5;
-
-        // Aplica a atualização de acordo com o tempo do parâmetro
-        var segundos = time * 1000;
-        setTimeout(function() {
-
-            // Lista a table
-            Service_app.list_app().then(function(result){ 
-               $scope.apps = result;
-            }, function(result){
-               $log.log(result);
-            });
-
-            // Renicia o refresh
-            setTimeout(function() {
-                $log.log("atualiza");
-                refresh_table();
-            }, segundos);
-
-        }, segundos);
-    }
-
     // Lista a table
-    Service_app.list_app().then(function(result){ 
-        // Aplica o resultado
-        $scope.apps = result;
-        // Inicia o refresh table
-        refresh_table();
-
+    Service_app.list().then(function(result){ 
+       $scope.apps = result;
     }, function(result){
-        $log.log(result);
+       $log.log(result);
+    });
+
+    // Novo Objeto
+    var app = {Factory_app};
+    app.id = 5;
+    app.nome = "Mixd";
+
+    // Adicionando um novo objeto no Banco de dados
+    Service_app.insert(app).then(function(response){
+        $log.log(response);
+    }, function(response){
+        $log.log(response);
     });
 
 });
