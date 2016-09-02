@@ -1,54 +1,40 @@
-angular.module("module_app").controller("controller_app", function(service_app, factory_app, $scope, $modal, $log){
+angular.module("module_app").controller("controller_app", function(Service_app, Factory_app, $scope, $modal, $log){
 
+    // Atualiza a table
+    function refresh_table(){
+        
+        // Definindo o intervalo de tempo da atualização em segundos
+        var time = 2.5;
 
-	$scope.message = "Hello World!!!";
+        // Aplica a atualização de acordo com o tempo do parâmetro
+        var segundos = time * 1000;
+        setTimeout(function() {
 
-	// Iniciando o Slick
-        $scope.slickConfig = {
-            enabled: true
-        }
-    // -- // --
+            // Lista a table
+            Service_app.list_app().then(function(result){ 
+               $scope.apps = result;
+            }, function(result){
+               $log.log(result);
+            });
 
-    // Iniciando o Select2
-        $scope.itemArray = [
-            {id: 1, name: 'first'},
-            {id: 2, name: 'second'},
-            {id: 3, name: 'third'},
-            {id: 4, name: 'fourth'},
-            {id: 5, name: 'fifth'}
-        ];
-        $scope.selected = { 
-            value: $scope.itemArray[0] 
-        };
+            // Renicia o refresh
+            setTimeout(function() {
+                $log.log("atualiza");
+                refresh_table();
+            }, segundos);
 
-        $scope.itemMotivoArray = [
-            {id: 0, name: 'Selecione'},
-            {id: 1, name: 'first'},
-            {id: 2, name: 'second'},
-            {id: 3, name: 'third'},
-            {id: 4, name: 'fourth'},
-            {id: 5, name: 'fifth'}
-        ];
+        }, segundos);
+    }
 
-        $scope.selectedMotivo = { 
-            value: $scope.itemMotivoArray[0] 
-        };
-    // -- // --
+    // Lista a table
+    Service_app.list_app().then(function(result){ 
+        // Aplica o resultado
+        $scope.apps = result;
+        // Inicia o refresh table
+        refresh_table();
 
-    // Funcação para enviar o Formulário
-        $scope.submitForm = function(isValid) {
-
-            // verifica se o formulário é válido
-            if (isValid) {
-                alert('Formulário OK');
-            }
-
-        };
-    // -- // --
-
-
-    var item1 = service_app.list_app();
-
-    $log.log(item1);
+    }, function(result){
+        $log.log(result);
+    });
 
 });

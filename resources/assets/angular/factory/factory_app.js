@@ -1,6 +1,6 @@
-angular.module("module_app").factory("factory_app", function($log){
+angular.module("module_app").factory("Factory_app", function($log){
 	
-	return new function(){
+	return function(){
 		this.id;
 		this.nome;
 

@@ -103,8 +103,8 @@
   display: none;
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
@@ -1537,7 +1537,6 @@ a:hover {
 }
 
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3403,7 +3402,6 @@ select[size] {
 input[type=file]:focus,
 input[type=checkbox]:focus,
 input[type=radio]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3978,7 +3976,6 @@ textarea.input-lg {
 .btn:active.focus,
 .btn:active:focus,
 .btn:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8396,7 +8393,7 @@ button.close {
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.18.1 - 2016-07-10T00:18:11.107Z
+ * Version: 0.19.3 - 2016-08-17T06:16:42.140Z
  * License: MIT
  */
 
@@ -8463,6 +8460,16 @@ body>.select2-container.open {
   border-bottom-color: #5897fb;
 }
 
+.ui-select-container[theme=select2] .ui-select-dropdown .ui-select-search-hidden,
+.ui-select-container[theme=select2] .ui-select-dropdown .ui-select-search-hidden input {
+  opacity: 0;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 .selectize-input.selectize-focus {
   border-color: #007FBB!important;
 }
@@ -8479,6 +8486,16 @@ body>.select2-container.open {
 .ui-select-container[theme=selectize].direction-up .ui-select-dropdown {
   box-shadow: 0 -4px 8px rgba(0,0,0,.25);
   margin-top: -2px;
+}
+
+.ui-select-container[theme=selectize] input.ui-select-search-hidden {
+  opacity: 0;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 0;
 }
 
 .btn-default-focus {
@@ -8513,6 +8530,15 @@ body>.select2-container.open {
 
 .input-group>.ui-select-bootstrap>input.ui-select-search.form-control.direction-up {
   border-radius: 4px 0 0 4px!important;
+}
+
+.ui-select-bootstrap .ui-select-search-hidden {
+  opacity: 0;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 .ui-select-bootstrap>.ui-select-match>.btn {
@@ -8589,7 +8615,8 @@ body>.ui-select-bootstrap.open {
   border-right: 1px solid #428bca;
 }
 
-.ui-select-bootstrap .ui-select-choices-row>a {
+.ui-select-bootstrap .ui-select-choices-row>span {
+  cursor: pointer;
   display: block;
   padding: 3px 20px;
   clear: both;
@@ -8599,22 +8626,22 @@ body>.ui-select-bootstrap.open {
   white-space: nowrap;
 }
 
-.ui-select-bootstrap .ui-select-choices-row>a:focus,
-.ui-select-bootstrap .ui-select-choices-row>a:hover {
+.ui-select-bootstrap .ui-select-choices-row>span:focus,
+.ui-select-bootstrap .ui-select-choices-row>span:hover {
   text-decoration: none;
   color: #262626;
   background-color: #f5f5f5;
 }
 
-.ui-select-bootstrap .ui-select-choices-row.active>a {
+.ui-select-bootstrap .ui-select-choices-row.active>span {
   color: #fff;
   text-decoration: none;
   outline: 0;
   background-color: #428bca;
 }
 
-.ui-select-bootstrap .ui-select-choices-row.active.disabled>a,
-.ui-select-bootstrap .ui-select-choices-row.disabled>a {
+.ui-select-bootstrap .ui-select-choices-row.active.disabled>span,
+.ui-select-bootstrap .ui-select-choices-row.disabled>span {
   color: #777;
   cursor: not-allowed;
   background-color: #fff;
@@ -8631,6 +8658,24 @@ body>.ui-select-bootstrap.open {
 
 .ui-select-container[theme=bootstrap].direction-up .ui-select-dropdown {
   box-shadow: 0 -4px 8px rgba(0,0,0,.25);
+}
+
+.ui-select-bootstrap .ui-select-match-text {
+  width: 100%;
+  padding-right: 1em;
+}
+
+.ui-select-bootstrap .ui-select-match-text span {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ui-select-bootstrap .ui-select-toggle>a.btn {
+  position: absolute;
+  height: 10px;
+  right: 10px;
+  margin-top: -2px;
 }
 
 /*# sourceMappingURL=select.min.css.map */

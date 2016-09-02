@@ -4,7 +4,7 @@ angular.module("module_app").config(function ($routeProvider, $locationProvider)
 
 	$routeProvider.when("/", {
 		templateUrl: "pages/home.html",
-		controller: "controller_app"
+		controller: "controller_home"
 	})
 
 	.when("/arquitetura", {
