@@ -5061,40 +5061,19 @@ table.hover tr:nth-of-type(even):hover {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
+  padding: 0;
 }
 
 .row {
-  max-width: 100%;
-}
-
-.foundation-grid {
-  display: block;
   width: auto;
-  margin: 0 -15px;
-  padding: 0;
-  list-style: none;
-}
-
-.foundation-grid > .column,
-.foundation-grid > .columns {
-  margin: 15px 0;
+  max-width: auto;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 @media (max-width: 1200px) {
   .container {
     padding: 0 15px;
-  }
-}
-
-@media (max-width: 640px) {
-  .foundation-grid {
-    margin: 0 auto;
-  }
-
-  .foundation-grid > .column,
-  .foundation-grid > .columns {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 

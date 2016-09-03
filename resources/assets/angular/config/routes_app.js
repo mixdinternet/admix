@@ -4,12 +4,7 @@ angular.module("module_app").config(function ($routeProvider, $locationProvider)
 
 	$routeProvider.when("/", {
 		templateUrl: "pages/home.html",
-		controller: "controller_home"
-	})
-
-	.when("/arquitetura", {
-		templateUrl: "pages/arquitetura.html",
-		controller: "controller_app"
+		controller: "Controller_home"
 	});
 
 	$routeProvider.otherwise({redirectTo: "/"});
