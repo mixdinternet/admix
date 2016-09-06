@@ -146,6 +146,7 @@ elixir(function(mix) {
         './')
 
         .copy([
+            'resources/assets/fonts',
             'node_modules/font-awesome/fonts',
             'node_modules/ionicons/fonts',
             'node_modules/bootstrap/fonts'
