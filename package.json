@@ -5,6 +5,14 @@
   },
   "dependencies": {
     "admin-lte": "^2.3.2",
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-foundation-6": "^0.10.7",
+    "angular-input-masks": "^2.4.0",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "angular-slick-carousel": "^3.1.7",
+    "angular-utils-pagination": "^0.11.1",
     "animate.css": "^3.4.0",
     "awesome-bootstrap-checkbox": "^0.3.6",
     "blueimp-load-image": "^2.1.0",
@@ -16,6 +24,7 @@
     "dropzone": "^4.3.0",
     "eonasdan-bootstrap-datetimepicker": "^4.15.35",
     "font-awesome": "^4.5.0",
+    "foundation-sites": "^6.2.3",
     "ionicons": "^2.0.1",
     "jquery": "^2.0.0",
     "jquery-chained": "^1.0.0",
@@ -29,9 +38,12 @@
     "magnific-popup": "^1.1.0",
     "modernizr": "^3.3.1",
     "moment": "^2.11.1",
+    "select2": "^4.0.3",
+    "select2-bootstrap-theme": "0.1.0-beta.8",
     "slick-carousel": "^1.5.9",
     "slicknav": "^1.0.6",
     "summernote": "^0.7.3",
-    "sweetalert2": "^4.2.7"
+    "sweetalert2": "^4.2.7",
+    "ui-select": "^0.19.1"
   }
 }
