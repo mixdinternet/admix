@@ -10,7 +10,7 @@
     {{ header('Pragma: no-cache') }}
 
     <script>
-        $.notify({
+        /*$.notify({
             message: '{{ Session::get('caffeinated.flash.message') }}'
         }, {
             type: '{{ Session::get('caffeinated.flash.level') }}',
@@ -21,6 +21,13 @@
                 exit: 'animated bounceOutRight'
             },
             z_index: 1050
-        });
+        });*/
+
+        swal({
+            title: '{{ Session::get('caffeinated.flash.message') }}',
+            type: '{{ Session::get('caffeinated.flash.level') }}',
+            timer: 5000,
+            showConfirmButton: false
+        }).done();
     </script>
 @endif

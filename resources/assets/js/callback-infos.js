@@ -5,21 +5,12 @@ $(function () {
         }
 
         if (data.flash) {
-            $.notify({
-                    message: data.flash.message
-                },
-                {
-                    type: data.flash.level,
-                    mouse_over: 'pause',
-                    timer: '800',
-                    animate: {
-                        enter: 'animated bounceInRight',
-                        exit: 'animated bounceOutRight'
-                    }
-                    ,
-                    z_index: 1050
-                }
-            );
+            swal({
+                title: data.flash.message,
+                type: data.flash.level,
+                timer: 5000,
+                showConfirmButton: false
+            }).done();
         }
     });
 });

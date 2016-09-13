@@ -53,6 +53,7 @@ elixir(function(mix) {
             'node_modules/magnific-popup/dist/magnific-popup.css',
             //'node_modules/slicknav/dist/slicknav.min.css',
             'node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
+            'node_modules/sweetalert2/dist/sweetalert2.min.css',
             'resources/assets/css/frontend.css'
         ],
         'public/assets/css/frontend.css',
@@ -66,7 +67,7 @@ elixir(function(mix) {
             'node_modules/admin-lte/plugins/select2/select2.full.min.js',
             'node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
             'node_modules/bootbox/bootbox.min.js',
-            'node_modules/bootstrap-notify/bootstrap-notify.min.js',
+            'node_modules/sweetalert2/dist/sweetalert2.min.js',
             'node_modules/jquery-validation/dist/jquery.validate.js',
             'node_modules/jquery-validation/dist/additional-methods.js',
             'node_modules/jquery-validation/dist/localization/messages_pt_BR.js',
@@ -107,6 +108,7 @@ elixir(function(mix) {
             'node_modules/bootstrap-fileinput/css/fileinput.min.css',
             'node_modules/jquery-jcrop/css/jquery.Jcrop.min.css',
             'node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
+            'node_modules/sweetalert2/dist/sweetalert2.min.css',
             'resources/assets/css/admin-fix.css'
         ],
         'public/assets/css/admin.css',
@@ -128,7 +130,7 @@ elixir(function(mix) {
             'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
             'node_modules/jquery-maskmoney/dist/jquery.maskMoney.min.js',
             'node_modules/bootbox/bootbox.min.js',
-            'node_modules/bootstrap-notify/bootstrap-notify.min.js',
+            'node_modules/sweetalert2/dist/sweetalert2.min.js',
             'node_modules/jquery-jcrop/js/jquery.Jcrop.min.js',
             'node_modules/summernote/dist/summernote.min.js',
             'node_modules/summernote/dist/lang/summernote-pt-BR.min.js',
