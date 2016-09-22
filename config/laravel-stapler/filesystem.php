@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'url' => '/media/:class_name_lower/:attachment/:id_partition/:style/:filename_slugify',
+    'url' => '/cache/media/:class_name_lower/:attachment/:id_partition/:style/:filename_slugify',
 
     /*
     |--------------------------------------------------------------------------
