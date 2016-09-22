@@ -61,6 +61,7 @@ elixir(function(mix) {
             'node_modules/sweetalert2/dist/sweetalert2.min.js',
             'node_modules/slick-carousel/slick/slick.min.js',
             'resources/assets/js/frontend.js',
+            'resources/assets/js/image.js/.',
 
 
             'node_modules/angular/angular.min.js',
