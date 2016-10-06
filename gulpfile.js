@@ -36,6 +36,7 @@ elixir(function(mix) {
         ])
 
         /* ---------------------------------------- */
+        
 
         /*
          * frontend
@@ -47,9 +48,7 @@ elixir(function(mix) {
 
         .styles([
             'node_modules/slick-carousel/slick/slick.css',
-            'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/ui-select/dist/select.min.css',
-            'node_modules/sweetalert2/dist/sweetalert2.min.css',
             'resources/assets/css/frontend.css'
         ],
         'public/assets/css/frontend.css',
@@ -58,13 +57,13 @@ elixir(function(mix) {
 
         .scripts([
             'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/sweetalert2/dist/sweetalert2.min.js',
             'node_modules/slick-carousel/slick/slick.min.js',
-            'resources/assets/js/frontend.js',
             'resources/assets/js/image.js/.',
+            'resources/assets/js/frontend.js',
 
 
             'node_modules/angular/angular.min.js',
+            'node_modules/angular-scroll/angular-scroll.min.js',
             'node_modules/angular-animate/angular-animate.min.js',
             'node_modules/angular-foundation-6/dist/angular-foundation.min.js',
             'node_modules/angular-utils-pagination/dirPagination.js',
@@ -77,6 +76,7 @@ elixir(function(mix) {
 
             'resources/assets/angular/modules/.',
             'resources/assets/angular/config/.',
+            'resources/assets/angular/filters/.',
             'resources/assets/angular/factory/.',
             'resources/assets/angular/services/.',
             'resources/assets/angular/controllers/.',
@@ -85,6 +85,8 @@ elixir(function(mix) {
         'public/assets/js/frontend.js',
         './')
         /* ---------------------------------------- */
+
+
 
         /*
          * administrativo
