@@ -26,6 +26,12 @@
         "mixdinternet/mconfig": "0.2.*",
         "mixdinternet/core": "0.1.*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/mixdinternet/menus"
+        }
+    ],
     "autoload": {
         "files": [
           "src/Http/helpers.php"
