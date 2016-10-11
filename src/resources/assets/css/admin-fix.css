@@ -1,0 +1,277 @@
+.fs-normal {
+  font-style: normal;
+}
+.box-header .box-title {
+  font-size: 20px;
+  padding: 8px 0;
+}
+.box-search {
+  color: #444;
+  display: block;
+  padding: 10px;
+  position: relative;
+}
+.box-search:before,
+.box-search:after {
+  content: " ";
+  display: table;
+}
+.box-search:after {
+  clear: both;
+}
+.box-search.with-border {
+  border-bottom: 1px solid #f4f4f4;
+}
+.collapsed-box .box-search.with-border {
+  border-bottom: none;
+}
+.box-search > .fa,
+.box-search > .glyphicon,
+.box-search > .ion,
+.box-search .box-title {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1;
+}
+.box-search > .fa,
+.box-search > .glyphicon,
+.box-search > .ion {
+  margin-right: 5px;
+}
+.box-search > .box-tools {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.box-search > .box-tools [data-toggle="tooltip"] {
+  position: relative;
+}
+.box-search > .box-tools.pull-right .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.table-action td:first-child {
+  width: 30px;
+}
+.table-action td:last-child {
+  text-align: right;
+}
+.has-error span.help-block,
+.has-success span.help-block {
+  display: block;
+  margin-top: 5px;
+  padding: 0 1px;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  font-style: italic;
+}
+.has-error span.help-block {
+  color: #d92a18;
+}
+.has-success span.help-block {
+  color: #1a8468;
+}
+.form-control.help-block {
+  margin: 0;
+}
+.has-error .form-control,
+.has-error .form-control:focus {
+  border-color: #d92a18;
+}
+.has-success .form-control,
+.has-success .form-control:focus {
+  border-color: #1a8468;
+}
+#loginForm .control-label {
+  display: none;
+}
+.jq-actions-sel {
+  display: none;
+}
+.table-action td:last-child form {
+  display: inline-block;
+}
+.table-action .checkbox {
+  height: 17px;
+  margin-top: 1px;
+  margin-bottom: 0px;
+}
+.checkbox-flat label::before {
+  border-radius: 0;
+}
+.label-flat {
+  border-radius: 0px;
+}
+.table th,
+.table tr {
+  white-space: nowrap;
+}
+.no-margin .pagination {
+  margin: 0px;
+}
+.bootbox-filemanager .modal-dialog {
+  width: 90%;
+}
+.main-header .logo {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.m-fixed .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.m-fixed .main-sidebar {
+  position: fixed;
+}
+.m-fixed .content-wrapper,
+.m-fixed .right-side {
+  padding-top: 50px;
+}
+select option[disabled],
+.select2-container--default .select2-results__option[aria-disabled=true] {
+  display: none;
+  /* worked in firefox*/
+  visibility: hidden;
+  /* worked in chrome*/
+}
+/* melhorar isso aqui */
+.table > tbody > tr.danger > td {
+  background: #ffdedd;
+  border-color: #ffbdbc;
+}
+.table > tbody > tr.warning > td {
+  background: #fdebd1;
+  border-color: #fbd7a3;
+}
+.table > tbody > tr.success > td {
+  background: #cee;
+  border-color: #99dede;
+}
+.table > tbody > tr.info > td {
+  background: #dbf0f7;
+  border-color: #b6e2ef;
+}
+/* fim melhorar isso aqui */
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: 0;
+}
+.has-error .checkbox,
+.has-error .checkbox-inline,
+.has-error .control-label,
+.has-error .help-block,
+.has-error .radio,
+.has-error .radio-inline,
+.has-error.checkbox label,
+.has-error.checkbox-inline label,
+.has-error.radio label,
+.has-error.radio-inline label {
+  color: #d92a18;
+}
+.file-preview {
+  border-radius: 0;
+  border-color: #D2D6DE;
+}
+.file-preview-frame:not(.file-preview-error):hover {
+  box-shadow: none;
+}
+.file-preview-frame {
+  box-shadow: none;
+  border-color: #D2D6DE;
+}
+.file-preview-other {
+  border-radius: 0;
+}
+.file-thumbnail-footer {
+  display: none;
+}
+.file-preview-image {
+  max-width: 200px;
+}
+.jcrop-vline,
+.jcrop-hline {
+  background: #ffffff url('/assets/img/Jcrop.gif');
+  font-size: 0;
+  position: absolute;
+}
+.tab-pane {
+  margin-top: 20px;
+}
+.dropzone .dz-preview .dz-image {
+  border-radius: 0;
+  width: 200px;
+  height: 150px;
+}
+.gallery .box {
+  box-shadow: none;
+  margin-bottom: 0;
+  max-width: 380px;
+}
+.gallery .box-body,
+.gallery .box-footer {
+  border-right: 1px solid #f4f4f4;
+  border-left: 1px solid #f4f4f4;
+}
+.gallery .box-footer {
+  border-bottom: 1px solid #f4f4f4;
+  border-radius: 0;
+}
+.nav-tabs-custom {
+  box-shadow: none;
+}
+ul.sortable {
+  padding-left: 0;
+}
+.sortable {
+  overflow: auto;
+}
+.sortable li {
+  list-style: none;
+  cursor: move;
+  height: 380px;
+}
+.ui-sortable-placeholder .box {
+  border: 1px dashed #f39c12;
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+}
+/* summernote */
+.note-popover .popover-content .note-para .dropdown-menu,
+.panel-heading.note-toolbar .note-para .dropdown-menu {
+  min-width: 217px;
+}
+.note-btn,
+.dropdown-menu {
+  border-radius: 0;
+}
+.note-editor.note-frame {
+  border-radius: 0;
+  border-color: #d2d6de;
+}
+.note-editor .modal .form-group {
+  margin-right: 0;
+  margin-left: 0;
+}
+.note-image-btn,
+.note-video-btn,
+.note-link-btn {
+  border-radius: 0;
+}
+/* fim summernote */
+.pagination-showing {
+  line-height: 30px;
+}
+@media (max-width: 991px) {
+  .error-page > .error-content > p {
+    text-align: center;
+  }
+}
+tr.strike td {
+  text-decoration: line-through;
+}

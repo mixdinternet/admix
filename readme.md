@@ -9,35 +9,23 @@
 Admix é a estrutura inicial utilizada no desenvolvimento de sites da Mixd Internet.
 
 Dentre os itens utilizados neste pacote podemos destacar:
-* [Laravel 5.1](https://laravel.com/docs/5.1)
+* [Laravel 5.3](https://laravel.com/docs/5.3)
 * [AdminLTE](https://almsaeedstudio.com/themes/AdminLTE/index.html)
 * [Integração com o Analytics](https://github.com/spatie/laravel-analytics)
-* [Gulp](http://gulpjs.com/)
-* [NPM](https://www.npmjs.com/)
-* [SASS](http://sass-lang.com/)
-* [Foundation 6](http://foundation.zurb.com/)
-* [AngularJS 1.5.8](https://angularjs.org/)
-  * [Rotas](https://www.npmjs.com/package/angular-route)
-  * [Paginação](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
-  * [Select2](http://angular-ui.github.io/ui-select)
-  * [Slick Carousel](https://www.npmjs.com/package/angular-slick-carousel)
-  * [Input Masks - PT_BR](https://github.com/assisrafael/angular-input-masks)
-  * [Angular Foundation 6](https://www.npmjs.com/package/angular-foundation-6)
-  * [Angular Animation Directives](https://docs.angularjs.org/guide/animations)
-  * [Angular Parallax](https://github.com/oblador/angular-parallax/blob/master/example/index.html)
 
 ## Pré Requisitos
-[Homestead](https://laravel.com/docs/5.1/homestead) funcionando corretamente na máquina
-
-Aumentar o timeout do composer `composer --global config process-timeout 2000` para que o npm install funcione
+[Homestead](https://laravel.com/docs/5.3/homestead) funcionando corretamente na máquina
 
 ## Instalação
 Executar dentro do homestead
 
 ```
 $ cd ~/Code
-$ composer create-project mixdinternet/admix Blog
+$ composer create-project laravel/laravel Blog
+$ cd Blog
+$ composer require mixdinternet/admix
 ```
+
 Faça login na sua aplicação utilizando os dados gerados na instalação
 ```
 Ex.
