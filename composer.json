@@ -22,22 +22,16 @@
         "folklore/image": "0.3.*",
         "spatie/laravel-analytics": "^1.3",
         "predis/predis": "^1.1",
-        "pingpong/menus": "2.2.x-dev",
         "mixdinternet/mconfig": "0.2.*",
         "mixdinternet/core": "0.1.*"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/mixdinternet/menus"
-        }
-    ],
     "autoload": {
         "files": [
-          "src/Http/helpers.php"
+            "src/Http/helpers.php"
         ],
         "psr-4": {
-          "Mixdinternet\\Admix\\": "src/"
+            "Mixdinternet\\Admix\\": "src/",
+            "Pingpong\\Menus\\": "menus/"
         }
     }
 }
