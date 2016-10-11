@@ -29,6 +29,9 @@
         "files": [
             "src/Http/helpers.php"
         ],
+        "classmap": [
+            "src/database"
+        ],
         "psr-4": {
             "Mixdinternet\\Admix\\": "src/",
             "Pingpong\\Menus\\": "menus/"
