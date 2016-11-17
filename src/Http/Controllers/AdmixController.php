@@ -91,8 +91,7 @@ class AdmixController extends Controller
             ])->save($targetPath . $fileName);
 
             #Image::thumbnail(storage_path('cache/') . $fileName, 640, 480, true)->save($targetPath . $fileName);
-
-            return '/media/summernote/' . $fileName;
+            return '/media/summernote/' . date('y/m/d/') . $fileName;
         }
     }
 }
