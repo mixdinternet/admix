@@ -26,7 +26,32 @@ $ cd Blog
 $ composer require mixdinternet/admix
 ```
 
+Registrando nosso pacote em config/app.php
+
+```
+Mixdinternet\Admix\Providers\AdmixServiceProvider::class,
+```
+
+Publicando os arquivos necessários
+
+```
+$ php artisan vendor:publish --provider="Mixdinternet\Admix\Providers\AdmixServiceProvider" --tag=install
+```
+
+Crie as tabelas da aplicação
+
+```
+$ php artisan migrate
+```
+
+Crie o usuário e teste
+
+```
+$ php artisan db:seed --class=AdmixTableSeeder
+```
+
 Faça login na sua aplicação utilizando os dados gerados na instalação
+
 ```
 Ex.
 Usuário administrador criado.
@@ -34,14 +59,11 @@ E-mail => xxxx@xxxxx.xxx
 Senha => xxxxx
 ```
 
-Caso não encontre, gere um novo utilizando o comando
-`php artisan db:seed`
-(todos os dados do banco serão perdidos, então utilize somente na instalação)
-
 ## Configuração
 O arquivo de configuração do Admix está em `config/admin.php`
 
 Os dados de autenticação do envio dos e-mails deve ser feito no `.env`
+Não esqueça do `APP_URL`
 
 ## Contribuindo
 
