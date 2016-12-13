@@ -65,6 +65,27 @@ O arquivo de configuração do Admix está em `config/admin.php`
 Os dados de autenticação do envio dos e-mails deve ser feito no `.env`
 Não esqueça do `APP_URL`
 
+Melhorando o `.gitignore`
+
+```
+/.idea/*
+/nbproject
+/node_modules
+/public/cache/*
+/public/media/*
+/public/storage
+/storage/database.sqlite
+/storage/cache/*
+/vendor
+Homestead.json
+Homestead.yaml
+.env
+._*
+.sub*
+.smb*
+.DS_Store
+```
+
 ## Contribuindo
 
 Em breve disponibilizaremos alguns pacotes para "encaixar" junto ao Admix.
