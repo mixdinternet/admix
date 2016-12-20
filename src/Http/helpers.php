@@ -58,3 +58,13 @@ function columnSort($title, $parameters, $icon = 'fa-sort')
 
     return sprintf('<a href="%s">%s <i class="%s"></i></a>', $fullUrl, $title, $icon);
 }
+
+function formatToNumber($number, $prefix = false)
+{
+    return (isset($number) && (substr($number, -3, 1) != ',')) ? $prefix . number_format($number, 2, ',', '.') : $number;
+}
+
+function formatToFloat($number)
+{
+    return ($number) ? str_replace(',', '.', str_replace('.', '', trim(str_replace('R$', '', $number)))) : null;
+}
