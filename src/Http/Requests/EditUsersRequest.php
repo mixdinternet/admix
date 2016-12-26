@@ -10,7 +10,7 @@ class EditUsersRequest extends FormRequest
     {
         return [
             'name' => 'required|max:150'
-            , 'email' => 'required|email|unique:users,email,' . auth()->id()
+            , 'email' => 'required|email|unique:users,email,' .  request()->route()->user->id
             , 'password' => 'min:8|same:password-confirmation'
         ];
     }
