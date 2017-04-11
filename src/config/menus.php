@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'ordering' => false,
+    'ordering' => true,
 ];

@@ -440,6 +440,7 @@ $(function () {
     });
 
     $(".jq-summernote").summernote({
+        height: 400,
         toolbar: [
             ['font', ['bold', 'italic', 'underline', 'clear']],
             ['para', ['ul', 'ol', 'paragraph']],

@@ -73,22 +73,21 @@ class AdmixController extends Controller
             $file = $request->file('file');
 
             $extension = $file->getClientOriginalExtension();
-            $fileName = date('Ymdhis') . '-' . rand(11111,99999) . '.' . $extension;
+            $fileName = date('Ymdhis') . '-' . rand(11111, 99999) . '.' . $extension;
 
             $file->move(storage_path('cache'), $fileName);
 
-            $fileInfo = array_values(getimagesize(storage_path('cache/') . $fileName));
-            list($width, $height, $type, $attr) = $fileInfo;
-
-            $width = ($width > 800) ? 800 : null;
-            $height = ($height > 600) ? 600 : null;
+            $config = config('admin.summernote.image');
+            $default = [
+                'width' => 800
+                , 'height' => 600
+                , 'quality' => 90
+            ];
+            $mergeConfig = array_merge($default, $config);
 
             $targetPath = public_path('media/summernote/' . date('y/m/d/'));
             @mkdir($targetPath, 0775, true);
-            Image::make(storage_path('cache/') . $fileName, [
-                'width' => $width,
-                'height' => $height
-            ])->save($targetPath . $fileName);
+            Image::make(storage_path('cache/') . $fileName, $mergeConfig)->save($targetPath . $fileName);
 
             #Image::thumbnail(storage_path('cache/') . $fileName, 640, 480, true)->save($targetPath . $fileName);
             return '/media/summernote/' . date('y/m/d/') . $fileName;
